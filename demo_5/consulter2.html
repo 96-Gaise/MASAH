@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MASAH</title>
+    <!-- core:css -->
+    <link rel="stylesheet" href="../assets/vendors/core/core.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- end plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../assets/fonts/feather-font/css/iconfont.css">
+    <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../assets/css/demo_5/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../assets/images/logo telema 100x100_Plan de travail 1.png" />
+    <!-- css customiser -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="../assets/vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../assets/vendors/jquery-tags-input/jquery.tagsinput.min.css">
+    <link rel="stylesheet" href="../assets/vendors/dropzone/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/vendors/dropify/dist/dropify.min.css">
+    <link rel="stylesheet" href="../assets/vendors/bootstrap-colorpicker/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css">
+    <!-- end plugin css for this page -->
+
+
+
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        <!-- partial:partials/_navbar.html -->
+        <div class="horizontal-menu">
+            <nav class="top-navbar mb-lg-4">
+                <div class="container">
+                    <div class="navbar-content row mt-2">
+                        <img src="../assets/images/logo telema 100x100_Plan de travail 1.png" alt="MASAH" width="100" height="100">
+                        <div class="col-9 mt-2 mx-auto">
+                            <h3 class="text-center text-success w-70">Ministere des Affaires Sociales et de l'Action Humanitaire <br>
+                                <span class="text-sm">Systeme de suivi des dossiers d'aide sociale</span>
+                            </h3>
+                        </div>
+                        <div class="col-1">
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <nav class="bottom-navbar p-2 bg-success">
+                <div class="container">
+                    <ul class="nav page-navigation mt-2">
+                        <li class="nav-item">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="#tbord">Tableau de bord</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#consulter" style="color: #fff;">Consulter</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="monAgenda.html" class="nav-link" style="color: #fff;">Mon agenda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="agenda.html" class="nav-link" style="color: #fff;">Agendas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="telema.html" class="nav-link" style="color: #fff;">TELEMA</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item float-right mb-lg-1">
+                            <span class="mt-4 mr-2">
+							<i class="btn-icon-prepend mr-2" data-feather="mail" data-toggle="modal" data-target="#detailFolder" style="color: #fff;"></i>
+                            <i class="btn-icon-prepend mr-2" data-feather="clipboard" data-toggle="modal" data-target=".annuaire-bar" style="color: #fff;"></i>
+                            <i class="btn-icon-prepend mr-2" data-feather="search" data-toggle="modal" data-target="#search" style="color: #fff;"></i>
+							</span>
+                            <!-- dropdown for message notification-->
+                            <button class="btn btn-danger mr-2 mb-2 mb-md-0 text-white btn-icon-text float-right shadow-sm" data-toggle="modal" data-target="#closeConnexion"><i class="btn-icon-prepend" data-feather="log-out"></i> Deconnexion</button>
+
+                            <!-- <a type="button" style="color: #fff;" class="btn btn-danger btn-sm shadow-sm" data-toggle="modal" data-target=".deconnection">
+                                 Deconnexion
+                            </a> -->
+                            <!-- end dropdown -->
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- partial -->
+
+        <!-- open modal -->
+        <div class="modal fade annuaire-bar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-body container">
+                        <form action="" method="post">
+                            <div class="row">
+                                <div class="col-sm-2 mt-4">
+                                    <ul class="nav nav-tabs flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#partenaires">Partenaires</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#annuaire">Annuaire</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="tab-content">
+                                        <div class="tab-pane container active" id="partenaires">
+                                            <form action="" method="post" class="forms-sample">
+                                                <div class="card p-4 mt-4">
+                                                    <div class="form-group row">
+                                                        <label for="dpt" class="col-form-label col-sm-2">Departement</label>
+                                                        <div class="col-sm-4">
+                                                            <select name="" id="dpt" class="form-control form-control-sm">
+                                                                        <option value="">Tous ou </option>
+                                                                        </select>
+                                                        </div>
+                                                        <label for="circonscription" class="offset-1 col-form-label col-sm-2">Circonscription</label>
+                                                        <div class="col-sm-3">
+                                                            <select name="" id="" class="form-control form-control-sm">
+                                                                                            <option value="">Toutes ou <non> </option>
+                                                                                        </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Theme</th>
+                                                                        <th>Action</th>
+                                                                        <th>Instrument</th>
+                                                                        <th>Partenaire</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <p class="card-description col-sm-12">Information sur le partenaire</p>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="adresse-n" class="col-form-label col-sm-1">Adresse N</label>
+                                                        <div class="col-sm-2">
+                                                            <input type="text" name="adresse-n" id="" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                        <label for="rue" class="col-form-label col-sm-1">Rue</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" name="" id="rue" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-quartier" class="offset-1 col-sm-2 col-form-label">Quartier</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-quartier" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-complement" class="offset-1 col-sm-2 col-form-label">Complement</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-complement" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-ville" class="offset-1 col-sm-2 col-form-label">ville</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-ville" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Nom</th>
+                                                                        <th>Prenom</th>
+                                                                        <th>Fonction</th>
+                                                                        <th>Contact</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <textarea name="" id="" cols="30" rows="4" class="form-control form-control-sm" placeholder="information complementaire"></textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane container fade" id="annuaire">
+                                            <form action="" method="post" class="forms-sample">
+                                                <div class="card p-5 mt-4">
+                                                    <div class="form-group row">
+                                                        <div class="form-check form-check-inline col-sm-3">
+                                                            <label class="form-check-label">
+                                                                                            <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                            Circonscription
+                                                                                        <i class="input-frame"></i></label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline col-sm-3">
+                                                            <label class="form-check-label">
+                                                                                            <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                            Departement
+                                                                                        <i class="input-frame"></i></label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline col-sm-3">
+                                                            <label class="form-check-label">
+                                                                                            <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                            Central
+                                                                                        <i class="input-frame"></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Theme</th>
+                                                                        <th>Action</th>
+                                                                        <th>Instrument</th>
+                                                                        <th>Partenaire</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <p class="card-description col-sm-12">Information sur le partenaire</p>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="adresse-n" class="col-form-label col-sm-1">Adresse N</label>
+                                                        <div class="col-sm-2">
+                                                            <input type="text" name="adresse-n" id="" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                        <label for="rue" class="col-form-label col-sm-1">Rue</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" name="" id="rue" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-quartier" class="offset-1 col-sm-2 col-form-label">Quartier</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-quartier" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-complement" class="offset-1 col-sm-2 col-form-label">Complement</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-complement" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-ville" class="offset-1 col-sm-2 col-form-label">ville</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-ville" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Nom</th>
+                                                                        <th>Prenom</th>
+                                                                        <th>Fonction</th>
+                                                                        <th>Contact</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
+        <!-- open modal of sign-up -->
+        <!-- Modal -->
+        <!-- sign up -->
+        <div class="modal fade" id="closeConnexion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <p><i class="btn-icon-prepend" data-feather="x-circle"></i> veillez a enregistrer toutes les operations encore en cours. <br> Souhaitez-vous fermer votre session?</p>
+                    </div>
+                    <div class="modal-footer mx-auto">
+                        <form action="../login.html" method="POST">
+                            <button type="submit" class="btn btn-success btn-sm"><i class="btn-icon-prepend" data-feather="check"></i> Oui</button>
+                            <button type="button" class="btn btn-light btn-sm" class="close" data-dismiss="modal" aria-label="Close"><i class="btn-icon-prepend" data-feather="x-square"></i> Non</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal for searching folder -->
+        <div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-5 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Rechercher par dossier</h6>
+                                            <form class="forms-sample">
+                                                <div class="form-group row">
+                                                    <label for="RSU" class="col-sm-4 col-form-label">Numero RSU</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="email" class="form-control form-control-sm form-control form-control-sm-sm" id="RSU" autocomplete="off" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="interne" class="col-sm-4 col-form-label">ou Numero interne</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control form-control-sm" id="interne" placeholder="Mobile number">
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary btn-sm mr-2 float-right">Ok</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Ou rechercher par</h6>
+                                            <form class="forms-sample">
+                                                <div class="form-group row">
+                                                    <label for="nom" class="col-sm-3 col-form-label">Nom</label>
+                                                    <div class="col-sm-9">
+                                                        <select name="" id="selectName" class="form-control form-control-sm">
+                                                            <option value="">test1</option>
+                                                            <option value="">test2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="prenom" class="col-sm-3 col-form-label">Prenom</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control form-control-sm" id="selectPrenom" placeholder="Mobile number">
+                                                        <option value="">test1</option>
+                                                        <option value="">test2</option>    
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="Telephone" class="col-sm-3 col-form-label">Telephone</label>
+                                                    <div class="col-sm-7">
+                                                        <input type="number" class="form-control form-control-sm form-control form-control-sm-sm" id="Telephone" placeholder="00242 00 0000 00 00">
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <button type="submit" class="btn btn-primary btn-sm mr-2 float-right">Ok</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6 class="mt-4">Resultat</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead class="bg-success">
+                                                <tr>
+                                                    <th style="color: #fff;">CAS</th>
+                                                    <th style="color: #fff;">N dossier</th>
+                                                    <th style="color: #fff;">N RSU</th>
+                                                    <th style="color: #fff;">Nom</th>
+                                                    <th style="color: #fff;">Telephone</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>nnnnn</td>
+                                                    <td>xxxxx</td>
+                                                    <td>xxxxx</td>
+                                                    <td>NOM prenom</td>
+                                                    <td>nn nnn nn nn</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-sm btn-shadow" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- close search modal -->
+
+        <div class="page-wrapper">
+
+            <div class="page-content">
+
+                <div class="">
+                    <!-- content tabs -->
+                    <div class="tab-content mt-2 bg-white p-2">
+                        <!-- dashboard pill -->
+                        <div class="tab-pane container-fluid fade p-4" id="tbord">
+                            <div class="mt-4">
+                                <h6>Aujourd'hui</h6>
+                                <div class="table-responsive pt-3">
+                                    <table class="table table-bordered table-hover w-65">
+                                        <thead>
+                                            <tr>
+                                                <th>Heure</th>
+                                                <th>Sujet</th>
+                                                <th>Complements</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-toggle="modal" data-target="#detailFolder">
+                                                <td>1</td>
+                                                <td>Cedric Kelly</td>
+                                                <td>June 21, 2021</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="mt-lg-4">
+                                <h6 class="mt-4">Mes operations</h6>
+                                <div class="table-responsive pt-3">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>N dossier</th>
+                                                <th>N RSU</th>
+                                                <th>Nom</th>
+                                                <th>Operation</th>
+                                                <th>Complements</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>nnnnn</td>
+                                                <td>xxxx</td>
+                                                <td>NOM prenom</td>
+                                                <td>Orientation</td>
+                                                <td>dossier a affecter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end dashboard pill -->
+                        <!-- Consulter pill -->
+                        <div class="tab-pane container-fluid active p-4" id="consulter">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <form class="">
+                                        <div class="row">
+                                            <div class="col-sm-">
+                                                <div class="form-group row">
+                                                    <label for="exampleInputUsername2" class="col-sm-2 col-form-label">N de dossier</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" class="form-control form-control-sm" id="exampleInputUsername2" placeholder="N interne">
+                                                    </div>
+                                                    <label for="" class="col-form-label col-sm-1">N RSU</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" class="form-control form-control-sm" placeholder="n RSU">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="exampleInputEmail2" class="col-sm-2 col-form-label">Nom</label>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" class="form-control" id="exampleInputEmail2" autocomplete="off" placeholder="prenoms + noms (concatenation)">
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                    Homme
+                                                <i class="input-frame"></i></label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                    Femme
+                                                <i class="input-frame"></i></label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="exampleInputMobile" class="col-sm-2 col-form-label">Adresse</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="exampleInputMobile" placeholder="n + rue + quartier + complement + ille (concatenation)">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="exampleInputPassword2" class="col-sm-2 col-form-label">Telephone</label>
+                                                    <div class="col-sm-2">
+                                                        <input type="tel" class="form-control form-control-sm" placeholder="04 xxx xx xx">
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <input type="tel" class="form-control form-control-sm" placeholder="06 xxx xx xx">
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <input type="tel" class="form-control form-control-sm" placeholder="05 xxx xx xx">
+                                                    </div>
+                                                    <label for="birth" class="col-sm-1 col-form-label">Naissance</label>
+                                                    <div class="col-sm-2">
+                                                        <div class="input-group date datepicker" id="datePickerExample">
+                                                            <input type="text" class="form-control"><span class="input-group-addon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+                                                        </div>
+                                                        <!-- <input type="date" class="form-control form-control-sm"> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="exampleInputMobile" class="col-sm-2 col-form-label">Etat matrimonial</label>
+                                                    <div class="col-sm-2">
+                                                        <input type="text" class="form-control" id="exampleInputMobile" placeholder="n + rue + quartier + complement + ille (concatenation)">
+                                                    </div>
+                                                    <label for="" class="col-form-label col-sm-2">Enfant a charge</label>
+                                                    <input type="text" name="" id="" class="col-sm-1 form-control form-control-sm" placeholder="text">
+                                                    <label for="" class="col-form-label col-sm-2">Niveau d'etude</label>
+                                                    <input type="text" name="" id="" class="form-control form-control-sm col-sm-3" placeholder="text">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group row">
+                                        <label for="nbpj" class="offset-3 col-sm-3 col-form-label">Piece jointes</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control form-control-sm" id="nbpj" placeholder="nb PJ">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-sm btn-light shadow-sm" data-toggle="modal" data-target="#pj-info">Consulter</button>
+                                        </div>
+
+                                        <!-- modal of pj-onfo -->
+                                        <div class="modal fade" id="pj-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="table-responsive pt-3">
+                                                            <table class="table table-bordered">
+                                                                <thead class="bg-success">
+                                                                    <tr>
+                                                                        <th style="color: #fff;">Intitule</th>
+                                                                        <th style="color: #fff;">voir</th>
+                                                                        <th style="color: #fff;" class="w-10">Telecharger</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>libelle du document</td>
+                                                                        <td>
+                                                                            <input type="checkbox" class="offset-5">
+                                                                        </td>
+                                                                        <td>
+                                                                            <input type="checkbox" class="offset-5">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-light shadow-sm" data-dismiss="modal">Fermer</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end modal pj-info -->
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Piece" class="col-sm-4 col-form-label">Piece d'identite</label>
+                                        <div class="col-sm-8">
+                                            <input type="email" class="form-control form-control-sm" id="Piece" placeholder="passport/CNI/permis conduire">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Numero" class="col-sm-4 col-form-label">Numero</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-sm" id="Numero" placeholder="N piece de la piece">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Date" class="col-sm-4 col-form-label">Date d'expiration</label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group date datepicker" id="datePickerExample">
+                                                <input type="text" class="form-control"><span class="input-group-addon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+                                            </div>
+                                            <!-- <input type="date" class="form-control form-control-sm" id="Date"> -->
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Handicap" class="offset-4 col-sm-3 col-form-label">Handicap</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control form-control-sm" id="Handicap" placeholder="Text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="border-bottom">
+                            <div class="row">
+                                <form action="" method="post">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <div class="form-group row">
+                                                <label for="rCAS" class="col-sm-4 col-form-label">Rattechement CAS</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" class="form-control form-control-sm" id="rCAS" placeholder="nom de la CAS du referent">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Col -->
+                                        <div class="offset-1 col-sm-6 float-right">
+                                            <div class="form-group row">
+                                                <label for="referent" class="col-sm-2 col-form-label">Referent</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control form-control-sm" id="referent" placeholder="nom du travailleur social">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Col -->
+                                    </div>
+                                    <div class="row">
+                                        <div class="container">
+                                            <div class="row">
+                                                <label for="" class="col-form-label col-sm-2">Affaire ouvert le</label>
+                                                <div class="col-sm-2">
+                                                    <input type="date" class="form-control form-control-sm">
+                                                </div>
+                                                <label for="" class="col-form-label col-sm-1">Affaire</label>
+                                                <div class="col-sm-3">
+                                                    <input type="text" class="form-control form-control-sm" placeholder="Gestion d'un enfant">
+                                                </div>
+                                                <label for="" class="col-form-label col-sm-2">Affaire close le</label>
+                                                <div class="col-sm-2">
+                                                    <input type="date" name="" id="" class="form-control form-control-sm" 0>
+                                                </div>
+                                            </div>
+                                            <span class="text-white">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum cupiditate possimus minus nulla labore exercitationem nemo placeat, maiores esse blanditiis deleniti non amet molestias nesciunt illo facilis veritatis, doloremque consequuntur.
+</span>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="row">
+                                <div class="table-responsive pt-3">
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="bg-success">
+                                            <tr>
+                                                <th style="color: #fff;" class="w-10">Date</th>
+                                                <th style="color: #fff;" class="w-20">Sujet</th>
+                                                <th style="color: #fff;" class="w-20">Correspondant</th>
+                                                <th style="color: #fff;" class="w-50">Informations</th>
+                                                <th style="color: #fff;" class="w-1">P.J</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-toggle="modal" data-target=".consulter-cr-modal">
+                                                <td>jj/mm/aa</td>
+                                                <td>rendez-vous</td>
+                                                <td>M Prenom NOM</td>
+                                                <td>texte libre/CR de visite1</td>
+                                                <td>
+                                                    <input type="checkbox" name="" id="">
+                                                </td>
+                                            </tr>
+                                            <tr data-toggle="modal" data-target=".entretien-rc">
+                                                <td>jj/mm/aa</td>
+                                                <td>concertation</td>
+                                                <td>M Prenom NOM</td>
+                                                <td>texte libre/CR de visite1</td>
+                                                <td>
+                                                    <input type="checkbox" name="" id="">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+
+                                    <!-- open modal consulter rc -->
+
+                                    <div class="modal fade entretien-rc" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h6 class="modal-title">Informations sur evenement</h6>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="modal-body">
+                                                        <form>
+                                                            <div class="form-group row">
+                                                                <label for="exampleInputUsername2" class="col-sm-2 col-form-label">N de dossier</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="text" class="form-control form-control-sm" id="exampleInputUsername2" placeholder="N interne">
+                                                                </div>
+                                                                <label for="" class="col-form-label col-sm-1">N RSU</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="n RSU">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="date-cr" class="col-sm-1 col-form-label">Date</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="date" class="form-control form-control-sm" id="date-cr">
+                                                                </div>
+                                                                <label for="" class="col-form-label col-sm-1">Sujet</label>
+                                                                <div class="col-sm-7">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="n RSU">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="ml-3">Compte rendu de l'entretien</label>
+                                                                <div class="offset-1 col-lg-11">
+                                                                    <textarea id="maxlength-textarea" class="form-control" maxlength="100" rows="8" placeholder="texte"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="offset-1 col-sm-6">
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-bordered table-hover">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td class="w-10">
+                                                                                    <input type="checkbox" name="" id="">
+                                                                                </td>
+                                                                                <td>fichier1.docx</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" name="" id="">
+                                                                                </td>
+                                                                                <td>fichier1.pdf</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <input type="checkbox" name="" id="">
+                                                                                </td>
+                                                                                <td>fichier1.jpg</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row col-sm-2 mx-auto">
+                                                                <button class="btn btn-sm btn-light btn block shadow-sm">Fermer</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- open consulter cr modal -->
+                                    <div class="modal fade consulter-cr-modal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-xl">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h6 class="modal-title">Compte rendu de l'entretien avec le beneficiaire</h6>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <label for="exampleInputUsername2" class="col-sm-2 col-form-label">N de dossier</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control form-control-sm" id="exampleInputUsername2" placeholder="N interne">
+                                                            </div>
+                                                            <label for="" class="col-form-label col-sm-1">N RSU</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control form-control-sm" placeholder="n RSU">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label for="date-cr" class="col-sm-1 col-form-label">Date</label>
+                                                            <div class="col-sm-3">
+                                                                <input type="date" class="form-control form-control-sm" id="date-cr">
+                                                            </div>
+                                                            <label for="" class="col-form-label col-sm-1">Sujet</label>
+                                                            <div class="col-sm-7">
+                                                                <input type="text" class="form-control form-control-sm" placeholder="n RSU">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="ml-3">Compte rendu de l'entretien</label>
+                                                            <div class="offset-1 col-lg-11">
+                                                                <textarea id="maxlength-textarea" class="form-control" maxlength="100" rows="8" placeholder="texte"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="offset-1 col-sm-6">
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered table-hover">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="w-10">
+                                                                                <input type="checkbox" name="" id="">
+                                                                            </td>
+                                                                            <td>fichier1.docx</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <input type="checkbox" name="" id="">
+                                                                            </td>
+                                                                            <td>fichier1.pdf</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <input type="checkbox" name="" id="">
+                                                                            </td>
+                                                                            <td>fichier1.jpg</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row col-sm-2 mx-auto">
+                                                            <button class="btn btn-sm btn-light btn block shadow-sm">Fermer</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end consulter cr modal -->
+                                </div>
+                                <div class="card-body container-fluid">
+                                    <div class="container row">
+                                        <div class="col-sm-12 row pb-4 pr-4 shadow-sm">
+                                            <!-- Nav tabs -->
+                                            <div class="col-sm-2">
+                                                <ul class="nav nav-tabs flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" data-toggle="tab" href="#rdv">Rendez-vous</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#orientation">Orientation</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" data-toggle="tab" href="#cloture">Cloture</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="#telema" class="nav-link" data-toggle="tab">TELEMA</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- Tab panes -->
+                                            <div class="col-sm-9">
+                                                <div class="tab-content row">
+                                                    <div class="tab-pane container active" id="rdv">
+                                                        <form class="forms-sample">
+                                                            <div class="form-group row">
+                                                                <label for="exampleInputUsername2" class="col-sm-2 col-form-label">rendez-vous</label>
+                                                                <div class="col-sm-3">
+                                                                    <div class="input-group date datepicker" id="datePickerExample">
+                                                                        <input type="text" class="form-control form-control-sm"><span class="input-group-addon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+                                                                    </div>
+                                                                </div>
+                                                                <label for="ac" class="col-form-label col-sm-1">avec</label>
+                                                                <div class="col-sm-4">
+                                                                    <input type="text" class="form-control form-control-sm">
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <button class="btn btn-sm btn-success shadow-sm">Modifier</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="sujet" class="col-sm-2 col-form-label">Sujet</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="email" class="form-control form-control-sm" id="sujet" autocomplete="off" placeholder="texte saisi dans l'onglet Agenda">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <button class="btn btn-sm btn-success btn-block shadow-sm offset-sm-10 col-sm-2">Ajouter</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <!-- 2e onglet -->
+                                                    <div class="tab-pane container fade" id="orientation">
+                                                        <form class="forms-sample container">
+                                                            <div class="form-group row">
+                                                                <label for="exampleInputUsername2" class="col-sm-2 col-form-label">Themes</label>
+                                                                <div class="col-sm-4">
+                                                                    <div class="input-group" id="">
+                                                                        <select name="" id="" class="form-control form-control-sm">
+                        <option value="">test 2</option>
+                    </select>
+                                                                    </div>
+                                                                </div>
+                                                                <label for="ac" class="col-form-label col-sm-2">Instrument</label>
+                                                                <div class="col-sm-2">
+                                                                    <select type="text" class="form-control form-control-sm">
+                    <option value="">test 1</option>
+                </select>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <button type="button" class="btn btn-sm btn-light shadow-sm" data-toggle="modal" data-target="#infoPartenaire"><i class="btn-icon-prepend" data-feather="info"></i></button>
+                                                                </div>
+
+                                                                <!-- open modal nom du paternaire -->
+                                                                <div class="modal" tabindex="-1" role="dialog" id="infoPartenaire">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title">Nom du partenaire</h5>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <div class="row">
+                                                                                    <label for="" class="col-form-label col-sm-2">Adresse</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <p>n xxxx <span class="mr-4">xxxxxxxxxxxxxxxxxxxxxx</span></p>
+                                                                                        <p>quartier xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                                                                                        <p>complement xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                                                                                        <p>ville xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <label for="" class="col-form-label col-sm-2">Contact</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <div class="table-responsive pt-3">
+                                                                                            <table class="table table-bordered table-hover">
+                                                                                                <thead class="bg-success">
+                                                                                                    <tr>
+                                                                                                        <th style="color: #fff;" class="w-10">Nom</th>
+                                                                                                        <th style="color: #fff;" class="w-20">Fonction</th>
+                                                                                                        <th style="color: #fff;" class="w-20">Contact</th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td>Prenom Nom</td>
+                                                                                                        <td>Fonction</td>
+                                                                                                        <td>06 nnn nn nn</td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer container">
+                                                                                <div class="row">
+                                                                                    <div class="col-sm-2">
+                                                                                        <button type="button" class="btn btn-secondary btn-sm shadow-sm" data-dismiss="modal">Fermer</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end modal -->
+
+                                                                <!-- open consulter cr modal -->
+                                                                <div class="modal fade consulter-cr-modal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog modal-xl">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h6 class="modal-title">Compte rendu de l'entretien avec le beneficiaire</h6>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <form>
+                                                                                    <div class="form-group row">
+                                                                                        <label for="exampleInputUsername2" class="col-sm-2 col-form-label">N de dossier</label>
+                                                                                        <div class="col-sm-3">
+                                                                                            <input type="text" class="form-control form-control-sm" id="exampleInputUsername2" placeholder="N interne">
+                                                                                        </div>
+                                                                                        <label for="" class="col-form-label col-sm-1">N RSU</label>
+                                                                                        <div class="col-sm-3">
+                                                                                            <input type="text" class="form-control form-control-sm" placeholder="n RSU">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <label for="date-cr" class="col-sm-1 col-form-label">Date</label>
+                                                                                        <div class="col-sm-3">
+                                                                                            <input type="date" class="form-control form-control-sm" id="date-cr">
+                                                                                        </div>
+                                                                                        <label for="" class="col-form-label col-sm-1">Sujet</label>
+                                                                                        <div class="col-sm-7">
+                                                                                            <input type="text" class="form-control form-control-sm" placeholder="n RSU">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row">
+                                                                                        <label class="ml-3">Compte rendu de l'entretien</label>
+                                                                                        <div class="offset-1 col-lg-11">
+                                                                                            <textarea id="maxlength-textarea" class="form-control" maxlength="100" rows="8" placeholder="texte"></textarea>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="offset-1 col-sm-6">
+                                                                                        <div class="table-responsive">
+                                                                                            <table class="table table-bordered table-hover">
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td class="w-10">
+                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                        </td>
+                                                                                                        <td>fichier1.docx</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                        </td>
+                                                                                                        <td>fichier1.pdf</td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>
+                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                        </td>
+                                                                                                        <td>fichier1.jpg</td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group row col-sm-2 mx-auto">
+                                                                                        <button class="btn btn-sm btn-light block shadow-sm">Fermer</button>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end consulter cr modal -->
+
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="exampleInputUsername2" class="col-sm-2 col-form-label">Action</label>
+                                                                <div class="col-sm-4">
+                                                                    <div class="input-group" id="">
+                                                                        <select name="" id="" class="form-control form-control-sm">
+                        <option value="">test 2</option>
+                    </select>
+                                                                    </div>
+                                                                </div>
+                                                                <label for="ac" class="col-form-label col-sm-2">Partenaire</label>
+                                                                <div class="col-sm-4">
+                                                                    <select type="text" class="form-control form-control-sm">
+                    <option value="">test 1</option>
+                </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="exampleInputUsername2" class="col-sm-2 col-form-label">Notes</label>
+                                                                <div class="col-sm-4">
+                                                                    <div class="input-group" id="">
+                                                                        <textarea name="" id="" cols="50" rows="4" class="form-control form-control-sm" placeholder="texte libre de la part du TS et du chef de CAS."></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-6">
+                                                                    <div class="row">
+                                                                        <label for="ac" class="col-form-label col-sm-4">Reunion Telema</label>
+                                                                        <div class="col-sm-8">
+                                                                            <select type="text" class="form-control form-control-sm">
+                                <option value="">test 1</option>
+                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <label for="status" class="col-form-label col-sm-4">Status</label>
+                                                                        <div class="col-sm-8">
+                                                                            <input type="text" class="form-control form-control-sm w-5" placeholder="propose">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="offset-4 col-sm-8">
+                                                                            <button class="btn btn-success btn-sm shadow-sm">Approuver</button>
+                                                                            <button class="btn btn-light btn-sm shadow-sm mr-2">Rejeter</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <!-- end -->
+                                                    <!-- 3e onglet -->
+                                                    <div class="tab-pane container fade" id="cloture">
+                                                        <div class="form-group row">
+                                                            <label for="dateCloture" class="col-sm-2 col-form-label">Date de cloture</label>
+                                                            <div class="col-sm-4">
+                                                                <input type="date" class="form-control form-control-sm" id="dateCloture">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="commentaire">Commentaire relatifs a la cloture du sujet</label>
+                                                            <textarea class="form-control form-control-sm" id="commentaire" rows="5" readonly="" placeholder="Texte saisi lors de la cloture (non modifiable)"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end 3e onglet -->
+                                                    <!-- 4e onglet -->
+                                                    <div class="tab-pane container fade" id="telema">
+                                                        <form action="" method="post">
+                                                            <div class="form-group row">
+                                                                <label for="etape" class="col-sm-4 col-form-label">Etape en cours de l'accompagnement</label>
+                                                                <div class="col-sm-5">
+                                                                    <input type="text" class="form-control form-control-sm" id="etape" placeholder="Bilan de competence">
+                                                                </div>
+                                                                <div class="col-sm-3">
+                                                                    <button class="btn btn-light btn-sm shadow-sm" type="button" data-toggle="modal" data-target=".etape">voir les etapes</button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="allocation" class="col-form-label col-sm-1">Allocation</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="text" id="allocation" class="form-control form-control-sm" placeholder="00 000">
+                                                                </div>
+                                                                <label for="jour" class="col-form-label col-sm-2">verset a e jour</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="text" name="" id="jour" class="form-control form-control-sm" placeholder="00 000">
+                                                                </div>
+                                                                <label for="reste" class="col-form-label col-sm-1">Reste</label>
+                                                                <div class="col-sm-2">
+                                                                    <input type="text" name="" id="reste" class="form-control form-control-sm" placeholder="00 000">
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <button type="button" class="btn btn-light btn-sm shadow-sm" data-toggle="modal" data-target=".financier">voir le suivi financier</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <!-- open modals -->
+                                                    <!-- etapes -->
+                                                    <div class="modal fade etape" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-xl" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title">Etape du parcours TELEMA</h5>
+                                                                </div>
+                                                                <div class="modal-body container">
+                                                                    <form action="" method="post">
+                                                                        <div class="row">
+                                                                            <label for="dossier" class="col-form-label col-sm-2">N du dossier</label>
+                                                                            <div class="col-sm-3">
+                                                                                <input type="text" name="" id="dossier" class="form-control form-control-sm" placeholder="n interne">
+                                                                            </div>
+                                                                            <label for="rsu" class="col-form-label">N RSU</label>
+                                                                            <div class="col-sm-3">
+                                                                                <input type="text" name="" id="rsu" class="form-control form-control-sm" placeholder="n RSU">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-sm-2">
+                                                                                <ul class="nav nav-tabs flex-column">
+                                                                                    <li class="nav-item">
+                                                                                        <a class="nav-link active" data-toggle="tab" href="#contrat">Contrat</a>
+                                                                                    </li>
+                                                                                    <li class="nav-item">
+                                                                                        <a class="nav-link" data-toggle="tab" href="#bilan">Bilan</a>
+                                                                                    </li>
+                                                                                    <li class="nav-item">
+                                                                                        <a class="nav-link" data-toggle="tab" href="#projet">Projet</a>
+                                                                                    </li>
+                                                                                    <li class="nav-item">
+                                                                                        <a href="#execution" class="nav-link" data-toggle="tab">Execution</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                            <div class="col-sm-10">
+                                                                                <div class="tab-content">
+                                                                                    <div class="tab-pane container active" id="contrat">
+                                                                                        <form action="" method="post" class="forms-sample">
+                                                                                            <div class="card p-5 mt-4">
+                                                                                                <div class="for form-group row">
+                                                                                                    <label for="" class="col-form-label col-sm-3">Date de signature du contrat</label>
+                                                                                                    <div class="form-group col-3">
+                                                                                                        <input type="date" class="form-control form-control-sm">
+                                                                                                    </div>
+                                                                                                    <label for="" class="col-form-label col-sm-2">Copie de contrat</label>
+                                                                                                    <div class="col-sm-3">
+                                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Texte">
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-1">
+                                                                                                        <button class="btn btn-light btn-sm shadow">Joindre</button>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="responsable" class="col-sm-3 col-form-label">Responsable de la CAS</label>
+                                                                                                    <div class="col-sm-5">
+                                                                                                        <input type="text" class="form-control form-control-sm" id="responsable" placeholder="Nom du chef de CAS specialisee">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="social" class="col-sm-3 col-form-label">Travailleur social</label>
+                                                                                                    <div class="col-sm-5">
+                                                                                                        <select name="" id="social" class="form-control form-control-sm">
+                                                                                                        <option value="">teste 2</option>
+                                                                                                    </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="beneficiaire" class="col-sm-3 col-form-label">Beneficiaire</label>
+                                                                                                    <div class="col-sm-5">
+                                                                                                        <input type="text" class="form-control" id="beneficiaire" placeholder="Nom du titulaire du dossier">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group mt-4 col-sm-4 mx-auto">
+                                                                                                <button type="submit" class="btn btn-success shadow-sm btn-sm mr-2">valider</button>
+                                                                                                <button class="btn btn-light btn-sm shadow-sm" type="reset">Annuler</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                    <div class="tab-pane container fade" id="bilan">
+                                                                                        <form action="" method="post" class="forms-sample">
+                                                                                            <div class="card p-5 mt-4">
+                                                                                                <div class="for form-group row">
+                                                                                                    <label for="" class="col-form-label col-sm-4">Date de validation du bilan </label>
+                                                                                                    <div class="form-group col-3">
+                                                                                                        <input type="date" class="form-control form-control-sm">
+                                                                                                    </div>
+                                                                                                    <label for="" class="col-form-label col-sm-2">Copie du <span class="text-uppercase">pv</span></label>
+                                                                                                    <div class="col-sm-3">
+                                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Texte">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group mb-0 row">
+                                                                                                    <div class="col-lg-2">
+                                                                                                        <label class="col-form-label">Commentaire</label>
+                                                                                                    </div>
+                                                                                                    <div class="col-lg-10">
+                                                                                                        <textarea id="maxlength-textarea" class="form-control form-control-sm" maxlength="100" rows="8" placeholder="commentaire du TS"></textarea>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group mt-4 col-sm-2 mx-auto">
+                                                                                                <button class="btn btn-light btn-block btn-sm shadow-sm" data-dismiss="modal">Fetmer</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                    <div class="tab-pane container fade" id="projet">
+                                                                                        <form action="" method="post" class="forms-sample">
+                                                                                            <div class="card p-5 mt-4">
+                                                                                                <div class="for form-group row">
+                                                                                                    <label for="" class="col-form-label col-sm-4">Date de validation du bilan </label>
+                                                                                                    <div class="form-group col-3">
+                                                                                                        <input type="date" class="form-control form-control-sm">
+                                                                                                    </div>
+                                                                                                    <label for="" class="col-form-label col-sm-2">Copie du <span class="text-uppercase">pv</span></label>
+                                                                                                    <div class="col-sm-3">
+                                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Texte">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group mb-0 row">
+                                                                                                    <div class="col-lg-2">
+                                                                                                        <label class="col-form-label">Commentaire</label>
+                                                                                                    </div>
+                                                                                                    <div class="col-lg-10">
+                                                                                                        <textarea id="maxlength-textarea" class="form-control form-control-sm" maxlength="100" rows="8" placeholder="commentaire du TS"></textarea>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group mt-4 col-sm-2 mx-auto">
+                                                                                                <button class="btn btn-light btn-block btn-sm shadow-sm" data-dismiss="modal">Fetmer</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                    <div class="tab-pane container fade" id="execution">
+                                                                                        <form action="" method="post" class="forms-sample">
+                                                                                            <div class="card p-5 mt-4">
+                                                                                                <div class="for form-group row">
+                                                                                                    <label for="" class="col-form-label col-sm-4">Date de validation du bilan </label>
+                                                                                                    <div class="form-group col-3">
+                                                                                                        <input type="date" class="form-control form-control-sm">
+                                                                                                    </div>
+                                                                                                    <label for="" class="col-form-label col-sm-2">Copie du <span class="text-uppercase">pv</span></label>
+                                                                                                    <div class="col-sm-3">
+                                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Texte">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group mb-0 row">
+                                                                                                    <div class="col-lg-2">
+                                                                                                        <label class="col-form-label">Commentaire</label>
+                                                                                                    </div>
+                                                                                                    <div class="col-lg-10">
+                                                                                                        <textarea id="maxlength-textarea" class="form-control form-control-sm" maxlength="100" rows="8" placeholder="commentaire du TS"></textarea>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group mt-4 col-sm-2 mx-auto">
+                                                                                                <button class="btn btn-light btn-block btn-sm shadow-sm" data-dismiss="modal">Fetmer</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- !etapes -->
+
+                                                    <!-- financier -->
+                                                    <div class="modal fade financier" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-xl">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h6 class="modal-title">Suivi financier TELEMA</h6>
+                                                                </div>
+                                                                <div class="moda-body container">
+                                                                    <div class="row mt-4">
+                                                                        <label for="dossier" class="col-form-label col-sm-2">N du dossier</label>
+                                                                        <div class="col-sm-3">
+                                                                            <input type="text" name="" id="dossier" class="form-control form-control-sm" placeholder="n interne">
+                                                                        </div>
+                                                                        <label for="rsu" class="col-form-label">N RSU</label>
+                                                                        <div class="col-sm-3">
+                                                                            <input type="text" name="" id="rsu" class="form-control form-control-sm" placeholder="n RSU">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-2 mt-4">
+                                                                            <ul class="nav nav-tabs flex-column">
+                                                                                <li class="nav-item">
+                                                                                    <a class="nav-link active" data-toggle="tab" href="#contrat-finance">Contrat</a>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <a class="nav-link" data-toggle="tab" href="#bilan-finance">Bilan</a>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <a class="nav-link" data-toggle="tab" href="#projet-finance">Projet</a>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <a href="#execution-finance" class="nav-link" data-toggle="tab">Execution</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-sm-10">
+                                                                            <div class="">
+                                                                                <div class="tab-content">
+                                                                                    <div class="tab-pane container active" id="contrat-finance">
+                                                                                        <form action="" method="post" class="forms-sample">
+                                                                                            <div class="card p-5 mt-4">
+                                                                                                <div class="for form-group row">
+                                                                                                    <label for="" class="col-form-label col-sm-3">Date de signature du contrat</label>
+                                                                                                    <div class="form-group col-3">
+                                                                                                        <input type="date" class="form-control form-control-sm">
+                                                                                                    </div>
+                                                                                                    <label for="" class="col-form-label col-sm-2">Copie de contrat</label>
+                                                                                                    <div class="col-sm-3">
+                                                                                                        <input type="text" class="form-control form-control-sm" placeholder="Texte">
+                                                                                                    </div>
+                                                                                                    <div class="col-sm-1">
+                                                                                                        <button class="btn btn-light btn-sm shadow">Joindre</button>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="responsable" class="col-sm-3 col-form-label">Responsable de la CAS</label>
+                                                                                                    <div class="col-sm-5">
+                                                                                                        <input type="text" class="form-control form-control-sm" id="responsable" placeholder="Nom du chef de CAS specialisee">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="social" class="col-sm-3 col-form-label">Travailleur social</label>
+                                                                                                    <div class="col-sm-5">
+                                                                                                        <select name="" id="social" class="form-control form-control-sm">
+                                                                                                        <option value="">teste 2</option>
+                                                                                                    </select>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="beneficiaire" class="col-sm-3 col-form-label">Beneficiaire</label>
+                                                                                                    <div class="col-sm-5">
+                                                                                                        <input type="text" class="form-control" id="beneficiaire" placeholder="Nom du titulaire du dossier">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group mt-4 col-sm-4 mx-auto">
+                                                                                                <button type="submit" class="btn btn-success shadow-sm btn-sm mr-2">valider</button>
+                                                                                                <button class="btn btn-light btn-sm shadow-sm" type="reset">Annuler</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                    <div class="tab-pane container fade" id="bilan-finance">
+                                                                                        <form action="" method="post">
+                                                                                            <div class="card mt-4 p-5">
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="Allocation" class="col-form-label col-sm-1">Allocation</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="number" name="" id="Allocation" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                                                                    </div>
+                                                                                                    <label for="total" class="col-form-label offset-1 col-sm-1">Total verse</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="number" name="" id="total" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                                                                    </div>
+                                                                                                    <label for="disponible" class="col-form-label offset-1 col-sm-1 text-center">Disponoble</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="number" name="" id="disponible" class="form-control form-control-sm" placeholder="0 000 000 XAF">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="versement" class="col-form-label col-sm-1">versement</label>
+                                                                                                    <div class="col-sm-11">
+                                                                                                        <div class="table-responsive pt-3">
+                                                                                                            <table class="table table-bordered">
+                                                                                                                <thead class="bg-success">
+                                                                                                                    <tr>
+                                                                                                                        <th style="color: #fff;">Date</th>
+                                                                                                                        <th style="color: #fff;">Raison</th>
+                                                                                                                        <th style="color: #fff;">Montant XAF</th>
+                                                                                                                        <th style="color: #fff;">P.J</th>
+                                                                                                                    </tr>
+                                                                                                                </thead>
+                                                                                                                <tbody>
+                                                                                                                    <tr>
+                                                                                                                        <td>xx/xx/xxxx</td>
+                                                                                                                        <td>motif de la depense</td>
+                                                                                                                        <td>xx xxxx</td>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                    </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <p class="card-description">Details versement:</p>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="detailsDate" class="col-form-label col-sm-2">Date</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="date" name="" id="detailsDate" class="form-control form-control-sm">
+                                                                                                    </div>
+                                                                                                    <label for="motif" class="col-form-label col-sm-1">Motif</label>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <input type="text" name="" id="motif" class="form-control form-control-sm" placeholder="Texte">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="montant" class="col-form-label col-sm-2">Montant (XAF)</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="text" name="" id="montant" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                                                                    </div>
+                                                                                                    <label for="pj" class="col-form-label col-sm-1">P.J</label>
+                                                                                                    <div class="col-sm-5">
+                                                                                                        <div class="table-responsive pt-3">
+                                                                                                            <table class="table table-bordered">
+                                                                                                                <tbody>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                        <td>Fichier1.docx</td>
+                                                                                                                    </tr>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                        <td>Fichier2.pdf</td>
+                                                                                                                    </tr>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                        <td>Fichier3.jpg</td>
+                                                                                                                    </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group row">
+                                                                                                <button class="btn btn-sm btn-light shadow-sm col-sm-2 mx-auto" type="button" data-dismiss="modal">Fermer</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                    <div class="tab-pane container fade" id="projet-finance">
+                                                                                        <form action="" method="post">
+                                                                                            <div class="card mt-4 p-5">
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="Allocation" class="col-form-label col-sm-1">Allocation</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="number" name="" id="Allocation" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                                                                    </div>
+                                                                                                    <label for="total" class="col-form-label offset-1 col-sm-1">Total verse</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="number" name="" id="total" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                                                                    </div>
+                                                                                                    <label for="disponible" class="col-form-label offset-1 col-sm-1">Disponoble</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="number" name="" id="disponible" class="form-control form-control-sm" placeholder="0 000 000 XAF">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="versement" class="col-form-label col-sm-1">versement</label>
+                                                                                                    <div class="col-sm-11">
+                                                                                                        <div class="table-responsive pt-3">
+                                                                                                            <table class="table table-bordered">
+                                                                                                                <thead class="bg-success">
+                                                                                                                    <tr>
+                                                                                                                        <th style="color: #fff;">Date</th>
+                                                                                                                        <th style="color: #fff;">Raison</th>
+                                                                                                                        <th style="color: #fff;">Montant XAF</th>
+                                                                                                                        <th style="color: #fff;">P.J</th>
+                                                                                                                    </tr>
+                                                                                                                </thead>
+                                                                                                                <tbody>
+                                                                                                                    <tr>
+                                                                                                                        <td>xx/xx/xxxx</td>
+                                                                                                                        <td>motif de la depense</td>
+                                                                                                                        <td>xx xxxx</td>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                    </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <p class="card-description">Details versement:</p>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="detailsDate" class="col-form-label col-sm-2">Date</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="date" name="" id="detailsDate" class="form-control form-control-sm">
+                                                                                                    </div>
+                                                                                                    <label for="motif" class="col-form-label col-sm-1">Motif</label>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <input type="text" name="" id="motif" class="form-control form-control-sm" placeholder="Texte">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="montant" class="col-form-label col-sm-2">Montant (XAF)</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="text" name="" id="montant" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                                                                    </div>
+                                                                                                    <label for="pj" class="col-form-label col-sm-1">P.J</label>
+                                                                                                    <div class="col-sm-5">
+                                                                                                        <div class="table-responsive pt-3">
+                                                                                                            <table class="table table-bordered">
+                                                                                                                <tbody>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                        <td>Fichier1.docx</td>
+                                                                                                                    </tr>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                        <td>Fichier2.pdf</td>
+                                                                                                                    </tr>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                        <td>Fichier3.jpg</td>
+                                                                                                                    </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group row">
+                                                                                                <button class="btn btn-sm btn-light shadow-sm col-sm-2 mx-auto" type="button" data-dismiss="modal">Fermer</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                    <div class="tab-pane container fade" id="execution-finance">
+                                                                                        <form action="" method="post">
+                                                                                            <div class="card mt-4 p-5">
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="Allocation" class="col-form-label col-sm-1">Allocation</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="number" name="" id="Allocation" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                                                                    </div>
+                                                                                                    <label for="total" class="col-form-label offset-1 col-sm-1">Total verse</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="number" name="" id="total" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                                                                    </div>
+                                                                                                    <label for="disponible" class="col-form-label offset-1 col-sm-1">Disponoble</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="number" name="" id="disponible" class="form-control form-control-sm" placeholder="0 000 000 XAF">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="versement" class="col-form-label col-sm-1">versement</label>
+                                                                                                    <div class="col-sm-11">
+                                                                                                        <div class="table-responsive pt-3">
+                                                                                                            <table class="table table-bordered">
+                                                                                                                <thead class="bg-success">
+                                                                                                                    <tr>
+                                                                                                                        <th style="color: #fff;">Date</th>
+                                                                                                                        <th style="color: #fff;">Raison</th>
+                                                                                                                        <th style="color: #fff;">Montant XAF</th>
+                                                                                                                        <th style="color: #fff;">P.J</th>
+                                                                                                                    </tr>
+                                                                                                                </thead>
+                                                                                                                <tbody>
+                                                                                                                    <tr>
+                                                                                                                        <td>xx/xx/xxxx</td>
+                                                                                                                        <td>motif de la depense</td>
+                                                                                                                        <td>xx xxxx</td>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                    </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <p class="card-description">Details versement:</p>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="detailsDate" class="col-form-label col-sm-2">Date</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="date" name="" id="detailsDate" class="form-control form-control-sm">
+                                                                                                    </div>
+                                                                                                    <label for="motif" class="col-form-label col-sm-1">Motif</label>
+                                                                                                    <div class="col-sm-6">
+                                                                                                        <input type="text" name="" id="motif" class="form-control form-control-sm" placeholder="Texte">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="form-group row">
+                                                                                                    <label for="montant" class="col-form-label col-sm-2">Montant (XAF)</label>
+                                                                                                    <div class="col-sm-2">
+                                                                                                        <input type="text" name="" id="montant" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                                                                    </div>
+                                                                                                    <label for="pj" class="col-form-label col-sm-1">P.J</label>
+                                                                                                    <div class="col-sm-5">
+                                                                                                        <div class="table-responsive pt-3">
+                                                                                                            <table class="table table-bordered">
+                                                                                                                <tbody>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                        <td>Fichier1.docx</td>
+                                                                                                                    </tr>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                        <td>Fichier2.pdf</td>
+                                                                                                                    </tr>
+                                                                                                                    <tr>
+                                                                                                                        <td>
+                                                                                                                            <input type="checkbox" name="" id="">
+                                                                                                                        </td>
+                                                                                                                        <td>Fichier3.jpg</td>
+                                                                                                                    </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group row">
+                                                                                                <button class="btn btn-sm btn-light shadow-sm col-sm-2 mx-auto" type="button" data-dismiss="modal">Fermer</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- !financier -->
+
+                                                    <!-- end modals -->
+
+
+                                                    <!-- end 4e onglet -->
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-sm-1">
+                                                <button class="btn btn-sm btn-light shadow-sm">Imprimer</button>
+                                                <a href="dashboard-one.html" class="btn btn-sm btn-secondary shadow-sm" style="margin-top: 127px;">Retour</a>
+                                            </div> -->
+
+                                            <div class="form-group row">
+                                                <!-- Suivi financier TELEMA -->
+                                                <div class="modal fade suivi-financier" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end suivi financier -->
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    </div>
+    <!-- Consulter end -->
+    </div>
+    <!-- end of tabs -->
+    </div>
+    </div>
+
+    <!-- details modal -->
+    <div class="modal" id="detailFolder">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <label for="selectFolder" class="col-sm-3 col-form-label">Fil de messages pour le dossier</label>
+                            <div class="col-sm-7">
+                                <select name="" id="selectFolder" class="form-control form-control-sm">
+    <option value="">dossier 1</option>
+    <option value="">dossier 2</option>
+</select>
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-light btn-sm shadow-sm">Afficher</button>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <p class="col-sm-12 font-italic">Identite : M/Mme prenom NOM, domicile xxxxxxxxxxxxxxxxxxxxxxxxx, contat 06 nn nnn nn nn</p>
+                            <p class="col-sm-12 font-italic">Dossier rattache a la CAS de xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx et suivi par nnnnnnnnnnnnnnnnnnnnnnn</p>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="table-responsive pt-3">
+                                <table class="table table-bordered">
+                                    <thead class="bg-success">
+                                        <tr>
+                                            <th style="color: #fff;">Date</th>
+                                            <th style="color: #fff;">De</th>
+                                            <th style="color: #fff;">A</th>
+                                            <th style="color: #fff;">Sujet</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>xx/xx/xxxx</td>
+                                            <td>Prenom Nom</td>
+                                            <td>Prenom Nom</td>
+                                            <td>Texte</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <hr style="border-bottom: 2px solid gray;">
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-sm-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-1 col-form-label">De</label>
+                                    <select name="" id="" class="col-sm-9 form-control form-control-sm">
+                                                <option value="">test 1</option>
+                                            </select>
+                                </div>
+                            </div>
+                            <!-- Col -->
+
+                            <div class="col-sm-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-1 col-form-label">A</label>
+                                    <select name="" id="" class="col-sm-11 form-control form-control-sm">
+                                                <option value="">test 1</option>
+                                            </select>
+                                </div>
+                            </div>
+                            <!-- Col -->
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleFormControlTextarea1">Texte du message</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Tapez le contenu du message..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="../assets/vendors/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../assets/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="../assets/vendors/inputmask/jquery.inputmask.min.js"></script>
+    <script src="../assets/vendors/select2/select2.min.js"></script>
+    <script src="../assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="../assets/vendors/jquery-tags-input/jquery.tagsinput.min.js"></script>
+    <script src="../assets/vendors/dropzone/dropzone.min.js"></script>
+    <script src="../assets/vendors/dropify/dist/dropify.min.js"></script>
+    <script src="../assets/vendors/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../assets/vendors/moment/moment.min.js"></script>
+    <script src="../assets/vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.js"></script>
+    <!-- end plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assets/vendors/feather-icons/feather.min.js"></script>
+    <script src="../assets/js/template.js"></script>
+    <!-- endinject -->
+
+    <!-- core:js -->
+    <script src="../assets/vendors/core/core.js "></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="../assets/vendors/chartjs/Chart.min.js "></script>
+    <script src="../assets/vendors/jquery.flot/jquery.flot.js "></script>
+    <script src="../assets/vendors/jquery.flot/jquery.flot.resize.js "></script>
+    <script src="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js "></script>
+    <script src="../assets/vendors/apexcharts/apexcharts.min.js "></script>
+    <script src="../assets/vendors/progressbar.js/progressbar.min.js "></script>
+    <!-- end plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assets/vendors/feather-icons/feather.min.js "></script>
+    <script src="../assets/js/template.js "></script>
+    <!-- endinject -->
+    <!-- custom js for this page -->
+    <script src="../assets/js/dashboard.js "></script>
+    <script src="../assets/js/datepicker.js "></script>
+    <!-- end custom js for this page -->
+
+    <!-- custom js for this page -->
+    <script src="../assets/js/form-validation.js"></script>
+    <script src="../assets/js/bootstrap-maxlength.js"></script>
+    <script src="../assets/js/inputmask.js"></script>
+    <script src="../assets/js/select2.js"></script>
+    <script src="../assets/js/typeahead.js"></script>
+    <script src="../assets/js/tags-input.js"></script>
+    <script src="../assets/js/dropzone.js"></script>
+    <script src="../assets/js/dropify.js"></script>
+    <script src="../assets/js/bootstrap-colorpicker.js"></script>
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/timepicker.js"></script>
+    <!-- end custom js for this page -->
+
+    <!-- // javascript -->
+    <script>
+        var scrollbarExample = new PerfectScrollbar('.perfect-scrollbar-example');
+    </script>
+</body>
+
+</html>

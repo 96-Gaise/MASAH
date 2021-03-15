@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MASAH</title>
+    <!-- core:css -->
+    <link rel="stylesheet" href="../assets/vendors/core/core.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="../assets/vendors/fullcalendar/fullcalendar.min.css">
+    <!-- end plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../assets/fonts/feather-font/css/iconfont.css">
+    <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../assets/css/demo_5/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../assets/images/logo telema 100x100_Plan de travail 1.png" />
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        <!-- partial:partials/_navbar.html -->
+        <div class="horizontal-menu">
+            <nav class="top-navbar mb-lg-4">
+                <div class="container">
+                    <div class="navbar-content row mt-2">
+                        <img src="../assets/images/logo telema 100x100_Plan de travail 1.png" alt="MASAH" width="100" height="100">
+                        <div class="col-9 mt-2 mx-auto">
+                            <h3 class="text-center text-success w-70">Ministere des Affaires Sociales et de l'Action Humanitaire <br>
+                                <span class="text-sm">Systeme de suivi des dossiers d'aide sociale</span>
+                            </h3>
+                        </div>
+                        <div class="col-1">
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <nav class="bottom-navbar p-2 bg-success">
+                <div class="container">
+                    <ul class="nav page-navigation mt-2">
+                        <li class="nav-item">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="#tbord">Tableau de bord</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#consulter" style="color: #fff;">Consulter</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="monAgenda.html" class="nav-link" style="color: #fff;">Mon agenda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="agenda.html" class="nav-link" style="color: #fff;">Agendas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="telema.html" class="nav-link" style="color: #fff;">TELEMA</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item float-right mb-lg-1">
+                            <span class="mt-4 mr-2">
+							<i class="btn-icon-prepend mr-2" data-feather="mail" data-toggle="modal" data-target="#detailFolder" style="color: #fff;"></i>
+                            <i class="btn-icon-prepend mr-2" data-feather="clipboard" data-toggle="modal" data-target=".annuaire-bar" style="color: #fff;"></i>
+                            <i class="btn-icon-prepend mr-2" data-feather="search" data-toggle="modal" data-target="#search" style="color: #fff;"></i>
+							</span>
+                            <!-- dropdown for message notification-->
+                            <button class="btn btn-danger mr-2 mb-2 mb-md-0 text-white btn-icon-text float-right shadow-sm" data-toggle="modal" data-target="#closeConnexion"><i class="btn-icon-prepend" data-feather="log-out"></i> Deconnexion</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- partial -->
+
+        <!-- open modal -->
+        <div class="modal fade annuaire-bar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-body container">
+                        <form action="" method="post">
+                            <div class="row">
+                                <div class="col-sm-2 mt-4">
+                                    <ul class="nav nav-tabs flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#partenaires">Partenaires</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#annuaire">Annuaire</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="tab-content">
+                                        <div class="tab-pane container active" id="partenaires">
+                                            <form action="" method="post" class="forms-sample">
+                                                <div class="card p-4 mt-4">
+                                                    <div class="form-group row">
+                                                        <label for="dpt" class="col-form-label col-sm-2">Departement</label>
+                                                        <div class="col-sm-4">
+                                                            <select name="" id="dpt" class="form-control form-control-sm">
+                                                                <option value="">Tous ou </option>
+                                                                </select>
+                                                        </div>
+                                                        <label for="circonscription" class="offset-1 col-form-label col-sm-2">Circonscription</label>
+                                                        <div class="col-sm-3">
+                                                            <select name="" id="" class="form-control form-control-sm">
+                                                                                    <option value="">Toutes ou <non> </option>
+                                                                                </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Sigle</th>
+                                                                        <th>Intitule</th>
+                                                                        <th>ville</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <p class="card-description col-sm-12">Information sur le partenaire</p>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="adresse-n" class="col-form-label col-sm-1">Adresse N</label>
+                                                        <div class="col-sm-2">
+                                                            <input type="text" name="adresse-n" id="" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                        <label for="rue" class="col-form-label col-sm-1">Rue</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" name="" id="rue" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-quartier" class="offset-1 col-sm-2 col-form-label">Quartier</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-quartier" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-complement" class="offset-1 col-sm-2 col-form-label">Complement</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-complement" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-ville" class="offset-1 col-sm-2 col-form-label">ville</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-ville" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Nom</th>
+                                                                        <th>Prenom</th>
+                                                                        <th>Fonction</th>
+                                                                        <th>Contact</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <textarea name="" id="" cols="30" rows="4" class="form-control form-control-sm" placeholder="information complementaire"></textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane container fade" id="annuaire">
+                                            <form action="" method="post" class="forms-sample">
+                                                <div class="card p-5 mt-4">
+                                                    <div class="form-group row">
+                                                        <div class="form-check form-check-inline col-sm-3">
+                                                            <label class="form-check-label">
+                                                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                    Circonscription
+                                                                                <i class="input-frame"></i></label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline col-sm-3">
+                                                            <label class="form-check-label">
+                                                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                    Departement
+                                                                                <i class="input-frame"></i></label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline col-sm-3">
+                                                            <label class="form-check-label">
+                                                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                    Central
+                                                                                <i class="input-frame"></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Theme</th>
+                                                                        <th>Action</th>
+                                                                        <th>Instrument</th>
+                                                                        <th>Partenaire</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <p class="card-description col-sm-12">Information sur le partenaire</p>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="adresse-n" class="col-form-label col-sm-1">Adresse N</label>
+                                                        <div class="col-sm-2">
+                                                            <input type="text" name="adresse-n" id="" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                        <label for="rue" class="col-form-label col-sm-1">Rue</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" name="" id="rue" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-quartier" class="offset-1 col-sm-2 col-form-label">Quartier</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-quartier" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-complement" class="offset-1 col-sm-2 col-form-label">Complement</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-complement" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-ville" class="offset-1 col-sm-2 col-form-label">ville</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-ville" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Nom</th>
+                                                                        <th>Prenom</th>
+                                                                        <th>Fonction</th>
+                                                                        <th>Contact</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
+
+        <div class="page-wrapper">
+
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Reunion programmees</h6>
+                                        <!-- <div class="btn-mvn-block">
+                                            <a class="btn btn-sm btn-light shadow-sm float-left carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                                << </a>
+                                                    <a class="btn btn-sm btn-light shadow-sm float-right carousel-control-next-icon" aria-hidden="true" href="#carouselExampleControls" role="button" data-slide="next"> >> </a>
+                                        </div> -->
+                                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <div class="table-responsive pt-3" id="">
+                                                        <table class="table table-bordered">
+                                                            <thead class="bg-success">
+                                                                <tr>
+                                                                    <th colspan="3" style="color: #fff;">Janvier</th>
+                                                                    <th colspan="3" style="color: #fff;">Fevrier</th>
+                                                                    <th colspan="3" style="color: #fff;">Mars</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="bg-light">Date</td>
+                                                                    <td class="bg-light">Heure</td>
+                                                                    <td class="bg-light">Capacite (Libre)</td>
+                                                                    <td class="bg-light">Date</td>
+                                                                    <td class="bg-light">Heure</td>
+                                                                    <td class="bg-light">Capacite (Libre)</td>
+                                                                    <td class="bg-light">Date</td>
+                                                                    <td class="bg-light">Heure</td>
+                                                                    <td class="bg-light">Capacite (Libre)</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Haley Kennedy</td>
+                                                                    <td>$313,500</td>
+                                                                    <td>May 15, 2021</td>
+                                                                    <td>Cedric Kelly</td>
+                                                                    <td>$206,850</td>
+                                                                    <td>June 21, 2021</td>
+                                                                    <td>Cedric Kelly</td>
+                                                                    <td>$206,850</td>
+                                                                    <td>June 21, 2021</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Bradley Greer</td>
+                                                                    <td>$132,000</td>
+                                                                    <td>Apr 12, 2021</td>
+                                                                    <td>Cedric Kelly</td>
+                                                                    <td>$206,850</td>
+                                                                    <td>June 21, 2021</td>
+                                                                    <td>Cedric Kelly</td>
+                                                                    <td>$206,850</td>
+                                                                    <td>June 21, 2021</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Zenaida Frank</td>
+                                                                    <td>$313,500</td>
+                                                                    <td>March 22, 2021</td>
+                                                                    <td>Cedric Kelly</td>
+                                                                    <td>$206,850</td>
+                                                                    <td>June 21, 2021</td>
+                                                                    <td>Cedric Kelly</td>
+                                                                    <td>$206,850</td>
+                                                                    <td>June 21, 2021</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-lg-4">
+                                <h6 class="mt-4">Participants inscrits</h6>
+                                <div class="table-responsive pt-3">
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="bg-success">
+                                            <tr>
+                                                <th style="color: #fff;">N dossier</th>
+                                                <th style="color: #fff;">N RSU</th>
+                                                <th style="color: #fff;">Nom</th>
+                                                <th style="color: #fff;">CAS</th>
+                                                <th style="color: #fff;">Travailleur social</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>nnnnn</td>
+                                                <td>rrrrrrr</td>
+                                                <td>M prenom NOM</td>
+                                                <td>nom de la CAS</td>
+                                                <td>M prenom NOM</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- core:js -->
+        <script src="../assets/vendors/core/core.js"></script>
+        <!-- endinject -->
+        <!-- plugin js for this page -->
+        <script src="../assets/vendors/jquery-ui/jquery-ui.min.js"></script>
+        <script src="../assets/vendors/moment/moment.min.js"></script>
+        <script src="../assets/vendors/fullcalendar/fullcalendar.min.js"></script>
+        <!-- end plugin js for this page -->
+        <!-- inject:js -->
+        <script src="../assets/vendors/feather-icons/feather.min.js"></script>
+        <script src="../assets/js/template.js"></script>
+        <!-- endinject -->
+        <!-- custom js for this page -->
+        <script src="../assets/js/fullcalendar.js"></script>
+        <!-- end custom js for this page -->
+</body>
+
+</html>

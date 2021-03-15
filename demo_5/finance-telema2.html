@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MASAH</title>
+    <!-- core:css -->
+    <link rel="stylesheet" href="../assets/vendors/core/core.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link rel="stylesheet" href="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css">
+    <!-- end plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../assets/fonts/feather-font/css/iconfont.css">
+    <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../assets/css/demo_5/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../assets/images/logo telema 100x100_Plan de travail 1.png" />
+    <!-- css customiser -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="../assets/vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../assets/vendors/jquery-tags-input/jquery.tagsinput.min.css">
+    <link rel="stylesheet" href="../assets/vendors/dropzone/dropzone.min.css">
+    <link rel="stylesheet" href="../assets/vendors/dropify/dist/dropify.min.css">
+    <link rel="stylesheet" href="../assets/vendors/bootstrap-colorpicker/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.min.css">
+    <!-- end plugin css for this page -->
+
+    <!-- link css for calendar -->
+    <link rel="stylesheet" href="../assets/vendors/fullcalendar/fullcalendar.min.css">
+</head>
+
+<body>
+    <div class="main-wrapper">
+
+        <!-- partial:partials/_navbar.html -->
+        <div class="horizontal-menu">
+            <nav class="top-navbar mb-lg-4">
+                <div class="container">
+                    <div class="navbar-content row mt-2">
+                        <img src="../assets/images/logo telema 100x100_Plan de travail 1.png" alt="MASAH" width="100" height="100">
+                        <div class="col-9 mt-2 mx-auto">
+                            <h3 class="text-center text-success w-70">Ministere des Affaires Sociales et de l'Action Humanitaire <br>
+                                <span class="text-sm">Systeme de suivi des dossiers d'aide sociale</span>
+                            </h3>
+                        </div>
+                        <div class="col-1">
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <nav class="bottom-navbar p-2 bg-success">
+                <div class="container">
+                    <ul class="nav page-navigation mt-2">
+                        <li class="nav-item">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="#tbord">Tableau de bord</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#consulter" style="color: #fff;">Consulter</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="monAgenda.html" class="nav-link" style="color: #fff;">Mon agenda</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="agenda.html" class="nav-link" style="color: #fff;">Agendas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="telema.html" class="nav-link" style="color: #fff;">TELEMA</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item float-right mb-lg-1">
+                            <span class="mt-4 mr-2">
+							<i class="btn-icon-prepend mr-2" data-feather="mail" data-toggle="modal" data-target="#detailFolder" style="color: #fff;"></i>
+                            <i class="btn-icon-prepend mr-2" data-feather="clipboard" data-toggle="modal" data-target=".annuaire-bar" style="color: #fff;"></i>
+                            <i class="btn-icon-prepend mr-2" data-feather="search" data-toggle="modal" data-target="#search" style="color: #fff;"></i>
+							</span>
+                            <!-- dropdown for message notification-->
+                            <button class="btn btn-danger mr-2 mb-2 mb-md-0 text-white btn-icon-text float-right shadow-sm" data-toggle="modal" data-target="#closeConnexion"><i class="btn-icon-prepend" data-feather="log-out"></i> Deconnexion</button>
+
+                            <!-- <a type="button" style="color: #fff;" class="btn btn-danger btn-sm shadow-sm" data-toggle="modal" data-target=".deconnection">
+                                 Deconnexion
+                            </a> -->
+                            <!-- end dropdown -->
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- partial -->
+        <!-- open modal -->
+        <div class="modal fade annuaire-bar" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-body container">
+                        <form action="" method="post">
+                            <div class="row">
+                                <div class="col-sm-2 mt-4">
+                                    <ul class="nav nav-tabs flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#partenaires">Partenaires</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#annuaire">Annuaire</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="tab-content">
+                                        <div class="tab-pane container active" id="partenaires">
+                                            <form action="" method="post" class="forms-sample">
+                                                <div class="card p-4 mt-4">
+                                                    <div class="form-group row">
+                                                        <label for="dpt" class="col-form-label col-sm-2">Departement</label>
+                                                        <div class="col-sm-4">
+                                                            <select name="" id="dpt" class="form-control form-control-sm">
+                                                                <option value="">Tous ou </option>
+                                                                </select>
+                                                        </div>
+                                                        <label for="circonscription" class="offset-1 col-form-label col-sm-2">Circonscription</label>
+                                                        <div class="col-sm-3">
+                                                            <select name="" id="" class="form-control form-control-sm">
+                                                                                    <option value="">Toutes ou <non> </option>
+                                                                                </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Theme</th>
+                                                                        <th>Action</th>
+                                                                        <th>Instrument</th>
+                                                                        <th>Partenaire</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <p class="card-description col-sm-12">Information sur le partenaire</p>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="adresse-n" class="col-form-label col-sm-1">Adresse N</label>
+                                                        <div class="col-sm-2">
+                                                            <input type="text" name="adresse-n" id="" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                        <label for="rue" class="col-form-label col-sm-1">Rue</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" name="" id="rue" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-quartier" class="offset-1 col-sm-2 col-form-label">Quartier</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-quartier" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-complement" class="offset-1 col-sm-2 col-form-label">Complement</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-complement" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-ville" class="offset-1 col-sm-2 col-form-label">ville</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-ville" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Nom</th>
+                                                                        <th>Prenom</th>
+                                                                        <th>Fonction</th>
+                                                                        <th>Contact</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <textarea name="" id="" cols="30" rows="4" class="form-control form-control-sm" placeholder="information complementaire"></textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane container fade" id="annuaire">
+                                            <form action="" method="post" class="forms-sample">
+                                                <div class="card p-5 mt-4">
+                                                    <div class="form-group row">
+                                                        <div class="form-check form-check-inline col-sm-3">
+                                                            <label class="form-check-label">
+                                                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                    Circonscription
+                                                                                <i class="input-frame"></i></label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline col-sm-3">
+                                                            <label class="form-check-label">
+                                                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                    Departement
+                                                                                <i class="input-frame"></i></label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline col-sm-3">
+                                                            <label class="form-check-label">
+                                                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                    Central
+                                                                                <i class="input-frame"></i></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Theme</th>
+                                                                        <th>Action</th>
+                                                                        <th>Instrument</th>
+                                                                        <th>Partenaire</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <p class="card-description col-sm-12">Information sur le partenaire</p>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="adresse-n" class="col-form-label col-sm-1">Adresse N</label>
+                                                        <div class="col-sm-2">
+                                                            <input type="text" name="adresse-n" id="" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                        <label for="rue" class="col-form-label col-sm-1">Rue</label>
+                                                        <div class="col-sm-8">
+                                                            <input type="text" name="" id="rue" class="form-control form-control-sm" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-quartier" class="offset-1 col-sm-2 col-form-label">Quartier</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-quartier" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-complement" class="offset-1 col-sm-2 col-form-label">Complement</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-complement" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="n-ville" class="offset-1 col-sm-2 col-form-label">ville</label>
+                                                        <div class="col-sm-9">
+                                                            <input type="text" class="form-control" id="n-ville" placeholder="Texte">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <div class="table-responsive pt-3 ml-4">
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="w-20">Nom</th>
+                                                                        <th>Prenom</th>
+                                                                        <th>Fonction</th>
+                                                                        <th>Contact</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end modal -->
+
+
+        <!-- open modal of sign-up -->
+        <!-- Modal -->
+        <!-- sign up -->
+        <div class="modal fade" id="closeConnexion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <p><i class="btn-icon-prepend" data-feather="x-circle"></i> veillez a enregistrer toutes les operations encore en cours. <br> Souhaitez-vous fermer votre session?</p>
+                    </div>
+                    <div class="modal-footer mx-auto">
+                        <form action="../login.html" method="POST">
+                            <button type="submit" class="btn btn-success btn-sm"><i class="btn-icon-prepend" data-feather="check"></i> Oui</button>
+                            <button type="button" class="btn btn-light btn-sm" class="close" data-dismiss="modal" aria-label="Close"><i class="btn-icon-prepend" data-feather="x-square"></i> Non</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal for searching folder -->
+        <div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-5 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Rechercher par dossier</h6>
+                                            <form class="forms-sample">
+                                                <div class="form-group row">
+                                                    <label for="RSU" class="col-sm-4 col-form-label">Numero RSU</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="email" class="form-control form-control-sm form-control form-control-sm-sm" id="RSU" autocomplete="off" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="interne" class="col-sm-4 col-form-label">ou Numero interne</label>
+                                                    <div class="col-sm-8">
+                                                        <input type="number" class="form-control form-control-sm" id="interne" placeholder="Mobile number">
+                                                    </div>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary btn-sm mr-2 float-right">Ok</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h6 class="card-title">Ou rechercher par</h6>
+                                            <form class="forms-sample">
+                                                <div class="form-group row">
+                                                    <label for="nom" class="col-sm-3 col-form-label">Nom</label>
+                                                    <div class="col-sm-9">
+                                                        <select name="" id="selectName" class="form-control form-control-sm">
+                                                            <option value="">test1</option>
+                                                            <option value="">test2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="prenom" class="col-sm-3 col-form-label">Prenom</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control form-control-sm" id="selectPrenom" placeholder="Mobile number">
+                                                        <option value="">test1</option>
+                                                        <option value="">test2</option>    
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="Telephone" class="col-sm-3 col-form-label">Telephone</label>
+                                                    <div class="col-sm-7">
+                                                        <input type="number" class="form-control form-control-sm form-control form-control-sm-sm" id="Telephone" placeholder="00242 00 0000 00 00">
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <button type="submit" class="btn btn-primary btn-sm mr-2 float-right">Ok</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6 class="mt-4">Resultat</h6>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>CAS</th>
+                                                    <th>N dossier</th>
+                                                    <th>N RSU</th>
+                                                    <th>Nom</th>
+                                                    <th>Telephone</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>nnnnn</td>
+                                                    <td>xxxxx</td>
+                                                    <td>xxxxx</td>
+                                                    <td>NOM prenom</td>
+                                                    <td>nn nnn nn nn</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-light btn-sm btn-shadow" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- close search modal -->
+
+        <div class="page-wrapper">
+
+            <div class="page-content">
+                <div class="">
+                    <!-- content tabs -->
+                    <div class="tab-content mt-2 bg-white p-2">
+                        <!-- dashboard pill -->
+                        <div class="tab-pane container-fluid fade p-4" id="tbord">
+                            <div class="mt-4">
+                                <h6>Aujourd'hui</h6>
+                                <div class="table-responsive pt-3">
+                                    <table class="table table-bordered table-hover w-65">
+                                        <thead>
+                                            <tr>
+                                                <th>Heure</th>
+                                                <th>Sujet</th>
+                                                <th>Complements</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Cedric Kelly</td>
+                                                <td>June 21, 2021</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="mt-lg-4">
+                                <h6 class="mt-4">Mes operations</h6>
+                                <div class="table-responsive pt-3">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>N dossier</th>
+                                                <th>N RSU</th>
+                                                <th>Nom</th>
+                                                <th>Operation</th>
+                                                <th>Complements</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>nnnnn</td>
+                                                <td>xxxx</td>
+                                                <td>NOM prenom</td>
+                                                <td>Orientation</td>
+                                                <td>dossier a affecter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end dashboard pill -->
+                        <!-- Consulter pill -->
+                        <div class="tab-pane container-fluid active p-4" id="consulter">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <form class="">
+                                        <div class="row">
+                                            <div class="col-sm-">
+                                                <div class="form-group row">
+                                                    <label for="exampleInputUsername2" class="col-sm-2 col-form-label">N de dossier</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" class="form-control form-control-sm" id="exampleInputUsername2" placeholder="N interne">
+                                                    </div>
+                                                    <label for="" class="col-form-label col-sm-1">N RSU</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" class="form-control form-control-sm" placeholder="n RSU">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="exampleInputEmail2" class="col-sm-2 col-form-label">Nom</label>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" class="form-control" id="exampleInputEmail2" autocomplete="off" placeholder="prenoms + noms (concatenation)">
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                    Homme
+                                                <i class="input-frame"></i></label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <label class="form-check-label">
+                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                    Femme
+                                                <i class="input-frame"></i></label>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="exampleInputMobile" class="col-sm-2 col-form-label">Adresse</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control" id="exampleInputMobile" placeholder="n + rue + quartier + complement + ille (concatenation)">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label for="exampleInputPassword2" class="col-sm-2 col-form-label">Telephone</label>
+                                                    <div class="col-sm-2">
+                                                        <input type="tel" class="form-control form-control-sm" placeholder="04 xxx xx xx">
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <input type="tel" class="form-control form-control-sm" placeholder="06 xxx xx xx">
+                                                    </div>
+                                                    <div class="col-sm-2">
+                                                        <input type="tel" class="form-control form-control-sm" placeholder="05 xxx xx xx">
+                                                    </div>
+                                                    <label for="birth" class="col-sm-1 col-form-label">Naissance</label>
+                                                    <div class="col-sm-2">
+                                                        <div class="input-group date datepicker" id="datePickerExample">
+                                                            <input type="text" class="form-control"><span class="input-group-addon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+                                                        </div>
+                                                        <!-- <input type="date" class="form-control form-control-sm"> -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label for="exampleInputMobile" class="col-sm-2 col-form-label">Etat matrimonial</label>
+                                                    <div class="col-sm-2">
+                                                        <input type="text" class="form-control" id="exampleInputMobile" placeholder="n + rue + quartier + complement + ille (concatenation)">
+                                                    </div>
+                                                    <label for="" class="col-form-label col-sm-2">Enfant a charge</label>
+                                                    <input type="text" name="" id="" class="col-sm-1 form-control form-control-sm" placeholder="text">
+                                                    <label for="" class="col-form-label col-sm-2">Niveau d'etude</label>
+                                                    <input type="text" name="" id="" class="form-control form-control-sm col-sm-3" placeholder="text">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group row">
+                                        <label for="nbpj" class="offset-3 col-sm-3 col-form-label">Piece jointes</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control form-control-sm" id="nbpj" placeholder="nb PJ">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-sm btn-light shadow-sm" data-toggle="modal" data-target="#pj-info">Consulter</button>
+                                        </div>
+
+                                        <!-- modal of pj-onfo -->
+                                        <div class="modal fade" id="pj-info" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Fichiers joints</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="table-responsive pt-3">
+                                                            <table class="table table-bordered">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Intitule</th>
+                                                                        <th>voir</th>
+                                                                        <th class="w-10">Telecharger</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>libelle du document</td>
+                                                                        <td>
+                                                                            <input type="checkbox" class="offset-5">
+                                                                        </td>
+                                                                        <td>
+                                                                            <input type="checkbox" class="offset-5">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-light shadow-sm" data-dismiss="modal">Fermer</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end modal pj-info -->
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Piece" class="col-sm-4 col-form-label">Piece d'identite</label>
+                                        <div class="col-sm-8">
+                                            <input type="email" class="form-control form-control-sm" id="Piece" placeholder="passport/CNI/permis conduire">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Numero" class="col-sm-4 col-form-label">Numero</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control form-control-sm" id="Numero" placeholder="N piece de la piece">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Date" class="col-sm-4 col-form-label">Date d'expiration</label>
+                                        <div class="col-sm-8">
+                                            <div class="input-group date datepicker" id="datePickerExample">
+                                                <input type="text" class="form-control"><span class="input-group-addon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></span>
+                                            </div>
+                                            <!-- <input type="date" class="form-control form-control-sm" id="Date"> -->
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="Handicap" class="offset-4 col-sm-3 col-form-label">Handicap</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control form-control-sm" id="Handicap" placeholder="Text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="border-bottom">
+                            <div class="row container">
+                                <div class="col-sm-6">
+                                    <p class="card-description">Situation actuelle des allocations d'accompagnement TELEMA</p>
+                                    <div class="table-responsive pt-3">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Etape</th>
+                                                    <th>Allocation</th>
+                                                    <th>Total versement</th>
+                                                    <th>Total disponible</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Bilan</td>
+                                                    <td>xxx xxx xxx</td>
+                                                    <td>xxx xxx</td>
+                                                    <td>xxx xxx</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <a href="#" data-toggle="modal" data-target="" type="button" class="btn btn-sm btn-light shadow-sm mt-4 float-right">Details</a>
+                                </div>
+                                <div class="col-sm-6 border-left p-4">
+                                    <p class="card-description">Nouveau versement propose:</p>
+                                    <form action="" method="post" class="container mt-4">
+                                        <form action="" method="post">
+                                            <div class="form-group row">
+                                                <label for="l-p" class="col-form-label col-sm-3">Pour l'etape</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" name="" id="l-p" class="form-control form-control-sm" placeholder="Texte">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="n-date" class="col-form-label col-sm-2">Date</label>
+                                                <div class="col-sm-4">
+                                                    <input type="date" name="" id="n-date" class="form-control form-control-sm">
+                                                </div>
+                                                <label for="n-m" class="col-form-label col-sm-2">Montant</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" name="" id="n-m" class="form-control form-control-sm" placeholder="0 000 000 XAF">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="l-p" class="col-form-label col-sm-3">Nouveau reste</label>
+                                                <div class="col-sm-5 ml-2">
+                                                    <input type="text" name="" id="l-p" class="form-control form-control-sm" placeholder="00 000 000 XAF">
+                                                </div>
+                                                <label for="xaf" class="col-form-label">XAF (Pour information)</label>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="m-motif" class="col-form-label col-sm-3">Motif</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" name="" id="m-motif" class="form-control form-control-sm" placeholder="Texte">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="n-pj" class="col-form-label col-sm-3">P.J</label>
+                                                <div class="col-sm-6">
+                                                    <div class="table-responsive pt-3">
+                                                        <table class="table table-bordered">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        <input type="checkbox" name="" id="">
+                                                                    </th>
+                                                                    <th>Fichier1.docx</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>
+                                                                        <input type="checkbox" name="" id="">
+                                                                    </th>
+                                                                    <th>Fichier2.pdf</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>
+                                                                        <input type="checkbox" name="" id="">
+                                                                    </th>
+                                                                    <th>Fichier3.jpg</th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row offset-3 col-sm-6">
+                                                <button class="btn btn-success btn-sm shadow-sm mr-4">valider</button>
+                                                <button class="btn btn-light btn-sm shadow-sm">Annuler</button>
+                                            </div>
+                                        </form>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- mon Agenda pill-->
+                        <div class="tab-pane container-fluid fade p-4" id="monAgenda">
+                            <div class="row">
+                                <div class="col-sm-5 row">
+                                    <label for="semaine" class="col-form-label col-sm-5">Semaine du</label>
+                                    <div class="col-sm-7">
+                                        <input type="datetime-local" name="" id="semaine" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                <div class="offset-sm-3 col-sm-4 row">
+                                    <label for="struture" class="col-form-label col-sm-2">Struture</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="" id="struture" class="form-control form-control-sm" placeholder="nom de la structure">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- add calendar here -->
+                            <div class="row mt-4 mb-4">
+                                <div class="col-sm-12">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat consectetur, possimus debitis perspiciatis provident nihil animi est neque, nostrum incidunt in minus nisi? Cupiditate ullam modi id quo, eius fugiat.
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="card">
+                                <form action="" method="post">
+                                    <div class="card p-4">
+                                        <div class="form-group row">
+                                            <label for="m_motif" class="col-sm-1 col-form-label">Motif</label>
+                                            <div class="col-sm-2">
+                                                <select name="" id="m_motif" class="form-control form-control-sm">
+                                                                <option value="">test 1</option>
+                                                                <option value="">test 2</option>
+                                                            </select>
+                                            </div>
+                                            <label for="heure" class="col-sm-1 col-form-label">Heure</label>
+                                            <div class="col-sm-3">
+                                                <select name="" id="heure" class="form-control form-control-sm">
+                                                        <option value="">test 1</option>
+                                                        <option value="">test 2</option>
+                                                    </select>
+                                            </div>
+                                            <label for="long" class="col-sm-1 col-form-label">Duree</label>
+                                            <div class="col-sm-4">
+                                                <select name="" id="heure" class="form-control form-control-sm">
+                                                    <option value="">test 1</option>
+                                                    <option value="">test 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="m-sujet" class="col-form-label col-sm-1">Sujet</label>
+                                            <div class="col-sm-11">
+                                                <input type="text" name="" id="m-sujet" class="form-control form-control-sm" placeholder="Libelle du sujet du rendez-vous" aria-describedby="helpId">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="m_complement" class="col-form-label col-sm-1">Complement</label>
+                                            <div class="col-sm-11">
+                                                <textarea type="text" name="" id="" rows="5" class="form-control form-control-sm" placeholder="Texte libre" aria-describedby="helpId"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="offset-9 col-sm-3">
+                                                <button type="submit" class="btn btn-success btn-sm shadow-sm">valider</button>
+                                                <button type="reset" class="btn btn-light btn-sm shadow-sm">Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- end mon Agenda -->
+                        <!-- Agenda pill -->
+                        <div class="tab-pane container-fluid fade p-4" id="Agenda">
+                            <div class="row">
+                                <div class="col-sm-5 row">
+                                    <label for="semaine" class="col-form-label col-sm-2">Date</label>
+                                    <div class="col-sm-10">
+                                        <input type="datetime-local" name="" id="semaine" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                <div class="offset-sm-3 col-sm-4 row">
+                                    <label for="struture" class="col-form-label col-sm-2">Struture</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="" id="struture" class="form-control form-control-sm" placeholder="CAS de xxx">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- add calendar here -->
+                            <div class="row mt-4 mb-4">
+                                <div class="col-sm-12">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat consectetur, possimus debitis perspiciatis provident nihil animi est neque, nostrum incidunt in minus nisi? Cupiditate ullam modi id quo, eius fugiat.
+                                </div>
+                            </div>
+                            <!--  -->
+                            <div class="card">
+                                <form action="" method="post">
+                                    <div class="card p-4">
+                                        <div class="form-group row">
+                                            <label for="ag-motif" class="col-sm-1 col-form-label">Motif</label>
+                                            <div class="col-sm-2">
+                                                <select name="" id="ag-motif" class="form-control form-control-sm">
+                                                    <option value="">Liste des motifs</option>
+                                                    <option value="">test 2</option>
+                                                </select>
+                                            </div>
+                                            <label for="ag-heure" class="col-sm-1 col-form-label">Heure</label>
+                                            <div class="col-sm-3">
+                                                <select name="" id="ag-heure" class="form-control form-control-sm">
+                                                        <option value="">Plages libres de l'argent</option>
+                                                        <option value="">test 2</option>
+                                                    </select>
+                                            </div>
+                                            <label for="ag-long" class="col-sm-1 col-form-label">Duree</label>
+                                            <div class="col-sm-4">
+                                                <select name="" id="ag-long" class="form-control form-control-sm">
+                                                    <option value="">Liste (30min, 1h, 1h30,2h)</option>
+                                                    <option value="">test 2</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="ag-dossier" class="col-form-label col-sm-1">Dossier n</label>
+                                            <div class="col-sm-3">
+                                                <select name="" id="ag-dossier" class="form-control form-control-sm">
+                                                    <option value="">Liste des n internes (editable)</option>
+                                                </select>
+                                            </div>
+                                            <label for="ag-affaire" class="col-form-label col-sm-1">Affaire</label>
+                                            <div class="col-sm-7">
+                                                <select name="" id="ag-affaire" class="form-control form-control-sm">
+    <option value="">Liste des affaires ouvertes dans le dossier choisi</option>
+</select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="ag-complement" class="col-form-label col-sm-1">Complement</label>
+                                            <div class="col-sm-11">
+                                                <textarea type="text" name="" id="ag-complement" rows="5" class="form-control form-control-sm" placeholder="Texte libre (si dossier est renseigne, 1 ere ligne sera toujours prenom + nom du titulaire)" aria-describedby="helpId"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="offset-9 col-sm-3">
+                                                <button type="submit" class="btn btn-success btn-sm shadow-sm">valider</button>
+                                                <button type="reset" class="btn btn-light btn-sm shadow-sm">Annuler</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- end agenda -->
+                        <!-- TELMA -->
+                        <div class="tab-pane cantainer-fluid fade p-4" id="telema">
+                            <div class="row">
+                                <!-- add calendrier -->
+                                <div class="col-sm-3">
+                                    <div id="external-events" class="external-events">
+                                        <div id="external-events-listing">
+                                            <h6 class="mb-2 text-muted">Draggable Events</h6>
+                                            <div class="fc-event ui-draggable ui-draggable-handle">Birth Day</div>
+                                            <div class="fc-event ui-draggable ui-draggable-handle">New Project</div>
+                                            <div class="fc-event ui-draggable ui-draggable-handle">Anniversary</div>
+                                            <div class="fc-event ui-draggable ui-draggable-handle">Clent Meeting</div>
+                                            <div class="fc-event ui-draggable ui-draggable-handle">Office Trip</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-9">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div id="fullcalendar" class="fc fc-unthemed fc-ltr">
+                                                <div class="fc-toolbar fc-header-toolbar">
+                                                    <div class="fc-left">
+                                                        <div class="fc-button-group"><button type="button" class="fc-prev-button fc-button fc-state-default fc-corner-left" aria-label="prev"><span class="fc-icon fc-icon-left-single-arrow"></span></button><button type="button" class="fc-today-button fc-button fc-state-default">today</button>
+                                                            <button type="button" class="fc-next-button fc-button fc-state-default fc-corner-right" aria-label="next"><span class="fc-icon fc-icon-right-single-arrow"></span></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fc-right">
+                                                        <div class="fc-button-group"><button type="button" class="fc-month-button fc-button fc-state-default fc-corner-left fc-state-active">month</button><button type="button" class="fc-agendaWeek-button fc-button fc-state-default">week</button>
+                                                            <button type="button" class="fc-agendaDay-button fc-button fc-state-default">day</button><button type="button" class="fc-listMonth-button fc-button fc-state-default fc-corner-right">list</button></div>
+                                                    </div>
+                                                    <div class="fc-center">
+                                                        <h2>April 2022</h2>
+                                                    </div>
+                                                    <div class="fc-clear"></div>
+                                                </div>
+                                                <div class="fc-view-container" style="">
+                                                    <div class="fc-view fc-month-view fc-basic-view" style="">
+                                                        <table class="">
+                                                            <thead class="fc-head">
+                                                                <tr>
+                                                                    <td class="fc-head-container fc-widget-header">
+                                                                        <div class="fc-row fc-widget-header">
+                                                                            <table class="">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th class="fc-day-header fc-widget-header fc-sun"><span>Sun</span></th>
+                                                                                        <th class="fc-day-header fc-widget-header fc-mon"><span>Mon</span></th>
+                                                                                        <th class="fc-day-header fc-widget-header fc-tue"><span>Tue</span></th>
+                                                                                        <th class="fc-day-header fc-widget-header fc-wed"><span>Wed</span></th>
+                                                                                        <th class="fc-day-header fc-widget-header fc-thu"><span>Thu</span></th>
+                                                                                        <th class="fc-day-header fc-widget-header fc-fri"><span>Fri</span></th>
+                                                                                        <th class="fc-day-header fc-widget-header fc-sat"><span>Sat</span></th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="fc-body">
+                                                                <tr>
+                                                                    <td class="fc-widget-content">
+                                                                        <div class="fc-scroller fc-day-grid-container" style="overflow: hidden; height: 455px;">
+                                                                            <div class="fc-day-grid fc-unselectable">
+                                                                                <div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 75px;">
+                                                                                    <div class="fc-bg">
+                                                                                        <table class="">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day fc-widget-content fc-sun fc-other-month fc-future" data-date="2022-03-27"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-mon fc-other-month fc-future" data-date="2022-03-28"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-tue fc-other-month fc-future" data-date="2022-03-29"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-wed fc-other-month fc-future" data-date="2022-03-30"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-thu fc-other-month fc-future" data-date="2022-03-31"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-fri fc-future" data-date="2022-04-01"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-sat fc-future" data-date="2022-04-02"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                    <div class="fc-content-skeleton">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day-top fc-sun fc-other-month fc-future" data-date="2022-03-27"><span class="fc-day-number">27</span></td>
+                                                                                                    <td class="fc-day-top fc-mon fc-other-month fc-future" data-date="2022-03-28"><span class="fc-day-number">28</span></td>
+                                                                                                    <td class="fc-day-top fc-tue fc-other-month fc-future" data-date="2022-03-29"><span class="fc-day-number">29</span></td>
+                                                                                                    <td class="fc-day-top fc-wed fc-other-month fc-future" data-date="2022-03-30"><span class="fc-day-number">30</span></td>
+                                                                                                    <td class="fc-day-top fc-thu fc-other-month fc-future" data-date="2022-03-31"><span class="fc-day-number">31</span></td>
+                                                                                                    <td class="fc-day-top fc-fri fc-future" data-date="2022-04-01"><span class="fc-day-number">1</span></td>
+                                                                                                    <td class="fc-day-top fc-sat fc-future" data-date="2022-04-02"><span class="fc-day-number">2</span></td>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 75px;">
+                                                                                    <div class="fc-bg">
+                                                                                        <table class="">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day fc-widget-content fc-sun fc-future" data-date="2022-04-03"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-mon fc-future" data-date="2022-04-04"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-tue fc-future" data-date="2022-04-05"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-wed fc-future" data-date="2022-04-06"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-thu fc-future" data-date="2022-04-07"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-fri fc-future" data-date="2022-04-08"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-sat fc-future" data-date="2022-04-09"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                    <div class="fc-content-skeleton">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day-top fc-sun fc-future" data-date="2022-04-03"><span class="fc-day-number">3</span></td>
+                                                                                                    <td class="fc-day-top fc-mon fc-future" data-date="2022-04-04"><span class="fc-day-number">4</span></td>
+                                                                                                    <td class="fc-day-top fc-tue fc-future" data-date="2022-04-05"><span class="fc-day-number">5</span></td>
+                                                                                                    <td class="fc-day-top fc-wed fc-future" data-date="2022-04-06"><span class="fc-day-number">6</span></td>
+                                                                                                    <td class="fc-day-top fc-thu fc-future" data-date="2022-04-07"><span class="fc-day-number">7</span></td>
+                                                                                                    <td class="fc-day-top fc-fri fc-future" data-date="2022-04-08"><span class="fc-day-number">8</span></td>
+                                                                                                    <td class="fc-day-top fc-sat fc-future" data-date="2022-04-09"><span class="fc-day-number">9</span></td>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 75px;">
+                                                                                    <div class="fc-bg">
+                                                                                        <table class="">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day fc-widget-content fc-sun fc-future" data-date="2022-04-10"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-mon fc-future" data-date="2022-04-11"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-tue fc-future" data-date="2022-04-12"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-wed fc-future" data-date="2022-04-13"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-thu fc-future" data-date="2022-04-14"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-fri fc-future" data-date="2022-04-15"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-sat fc-future" data-date="2022-04-16"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                    <div class="fc-content-skeleton">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day-top fc-sun fc-future" data-date="2022-04-10"><span class="fc-day-number">10</span></td>
+                                                                                                    <td class="fc-day-top fc-mon fc-future" data-date="2022-04-11"><span class="fc-day-number">11</span></td>
+                                                                                                    <td class="fc-day-top fc-tue fc-future" data-date="2022-04-12"><span class="fc-day-number">12</span></td>
+                                                                                                    <td class="fc-day-top fc-wed fc-future" data-date="2022-04-13"><span class="fc-day-number">13</span></td>
+                                                                                                    <td class="fc-day-top fc-thu fc-future" data-date="2022-04-14"><span class="fc-day-number">14</span></td>
+                                                                                                    <td class="fc-day-top fc-fri fc-future" data-date="2022-04-15"><span class="fc-day-number">15</span></td>
+                                                                                                    <td class="fc-day-top fc-sat fc-future" data-date="2022-04-16"><span class="fc-day-number">16</span></td>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 75px;">
+                                                                                    <div class="fc-bg">
+                                                                                        <table class="">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day fc-widget-content fc-sun fc-future" data-date="2022-04-17"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-mon fc-future" data-date="2022-04-18"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-tue fc-future" data-date="2022-04-19"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-wed fc-future" data-date="2022-04-20"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-thu fc-future" data-date="2022-04-21"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-fri fc-future" data-date="2022-04-22"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-sat fc-future" data-date="2022-04-23"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                    <div class="fc-content-skeleton">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day-top fc-sun fc-future" data-date="2022-04-17"><span class="fc-day-number">17</span></td>
+                                                                                                    <td class="fc-day-top fc-mon fc-future" data-date="2022-04-18"><span class="fc-day-number">18</span></td>
+                                                                                                    <td class="fc-day-top fc-tue fc-future" data-date="2022-04-19"><span class="fc-day-number">19</span></td>
+                                                                                                    <td class="fc-day-top fc-wed fc-future" data-date="2022-04-20"><span class="fc-day-number">20</span></td>
+                                                                                                    <td class="fc-day-top fc-thu fc-future" data-date="2022-04-21"><span class="fc-day-number">21</span></td>
+                                                                                                    <td class="fc-day-top fc-fri fc-future" data-date="2022-04-22"><span class="fc-day-number">22</span></td>
+                                                                                                    <td class="fc-day-top fc-sat fc-future" data-date="2022-04-23"><span class="fc-day-number">23</span></td>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 75px;">
+                                                                                    <div class="fc-bg">
+                                                                                        <table class="">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day fc-widget-content fc-sun fc-future" data-date="2022-04-24"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-mon fc-future" data-date="2022-04-25"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-tue fc-future" data-date="2022-04-26"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-wed fc-future" data-date="2022-04-27"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-thu fc-future" data-date="2022-04-28"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-fri fc-future" data-date="2022-04-29"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-sat fc-future" data-date="2022-04-30"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                    <div class="fc-content-skeleton">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day-top fc-sun fc-future" data-date="2022-04-24"><span class="fc-day-number">24</span></td>
+                                                                                                    <td class="fc-day-top fc-mon fc-future" data-date="2022-04-25"><span class="fc-day-number">25</span></td>
+                                                                                                    <td class="fc-day-top fc-tue fc-future" data-date="2022-04-26"><span class="fc-day-number">26</span></td>
+                                                                                                    <td class="fc-day-top fc-wed fc-future" data-date="2022-04-27"><span class="fc-day-number">27</span></td>
+                                                                                                    <td class="fc-day-top fc-thu fc-future" data-date="2022-04-28"><span class="fc-day-number">28</span></td>
+                                                                                                    <td class="fc-day-top fc-fri fc-future" data-date="2022-04-29"><span class="fc-day-number">29</span></td>
+                                                                                                    <td class="fc-day-top fc-sat fc-future" data-date="2022-04-30"><span class="fc-day-number">30</span></td>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="fc-row fc-week fc-widget-content fc-rigid" style="height: 80px;">
+                                                                                    <div class="fc-bg">
+                                                                                        <table class="">
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day fc-widget-content fc-sun fc-other-month fc-future" data-date="2022-05-01"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-mon fc-other-month fc-future" data-date="2022-05-02"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-tue fc-other-month fc-future" data-date="2022-05-03"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-wed fc-other-month fc-future" data-date="2022-05-04"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-thu fc-other-month fc-future" data-date="2022-05-05"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-fri fc-other-month fc-future" data-date="2022-05-06"></td>
+                                                                                                    <td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2022-05-07"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                    <div class="fc-content-skeleton">
+                                                                                        <table>
+                                                                                            <thead>
+                                                                                                <tr>
+                                                                                                    <td class="fc-day-top fc-sun fc-other-month fc-future" data-date="2022-05-01"><span class="fc-day-number">1</span></td>
+                                                                                                    <td class="fc-day-top fc-mon fc-other-month fc-future" data-date="2022-05-02"><span class="fc-day-number">2</span></td>
+                                                                                                    <td class="fc-day-top fc-tue fc-other-month fc-future" data-date="2022-05-03"><span class="fc-day-number">3</span></td>
+                                                                                                    <td class="fc-day-top fc-wed fc-other-month fc-future" data-date="2022-05-04"><span class="fc-day-number">4</span></td>
+                                                                                                    <td class="fc-day-top fc-thu fc-other-month fc-future" data-date="2022-05-05"><span class="fc-day-number">5</span></td>
+                                                                                                    <td class="fc-day-top fc-fri fc-other-month fc-future" data-date="2022-05-06"><span class="fc-day-number">6</span></td>
+                                                                                                    <td class="fc-day-top fc-sat fc-other-month fc-future" data-date="2022-05-07"><span class="fc-day-number">7</span></td>
+                                                                                                </tr>
+                                                                                            </thead>
+                                                                                            <tbody>
+                                                                                                <tr>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                    <td></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <button class="btn btn-dark btn-sm" data-toggle="modal" data-target=".reference-1">reference-1</button> -->
+                                <!-- end calendrier -->
+                            </div>
+                            <div class="row">
+                                <form action="" method="post">
+                                    <div class="form-group row">
+                                        <label for="telema-date col-sm-1">Date</label>
+                                        <div class="col-sm-2">
+                                            <input type="date" name="" id="telema-date" class="form-control form-control-sm" aria-describedby="helpId">
+                                        </div>
+                                        <label for="telema-heure" class="col-form-label col-sm-1">Heure</label>
+                                        <div class="col-sm-2">
+                                            <input type="time" name="" id="telema-heure" class="form-control form-control-sm">
+                                        </div>
+                                        <label for="telema-capacite" class="col-form-label col-sm-1">Capacite</label>
+                                        <div class="col-sm-2">
+                                            <input type="text" name="" id="telema-capacite" class="form-control form-control-sm" placeholder="nn">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="offset-3 col-sm-5">
+                                            <button class="btn btn-sm btn-success shadow-sm mr-2">Ajouter</button>
+                                            <button class="btn btn-sm btn-secondary shadow-sm mr-2">Modifier</button>
+                                            <button class="btn btn-sm btn-danger shadow-sm">Supprimer</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                            <!-- open modal -->
+                            <div class="modal fade reference-1" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-xl" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Etape du parcours TELEMA</h5>
+                                        </div>
+                                        <div class="modal-body container">
+                                            <form action="" method="post">
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                        <ul class="nav nav-tabs flex-column">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" data-toggle="tab" href="#partenaires">Partenaires</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" data-toggle="tab" href="#annuaire">Annuaire</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane container active" id="partenaires">
+                                                                <form action="" method="post" class="forms-sample">
+                                                                    <div class="card p-5 mt-4">
+                                                                        <div class="form-group row">
+                                                                            <label for="dpt" class="col-form-label-col-sm-2">Departement</label>
+                                                                            <div class="col-sm-4">
+                                                                                <input type="text" name="" id="dpt" class="form-control form-control-sm">
+                                                                            </div>
+                                                                            <label for="circonscription" class="offset-1 col-form-label col-sm-2">Circonscription</label>
+                                                                            <div class="col-sm-3">
+                                                                                <select name="" id="" class="form-control form-control-sm">
+                                                                                    <option value="">Toutes ou <non> </option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <div class="table-responsive pt-3 ml-4">
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th class="w-20">Theme</th>
+                                                                                            <th>Action</th>
+                                                                                            <th>Instrument</th>
+                                                                                            <th>Partenaire</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <p class="card-description col-sm-12">Information sur le partenaire</p>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="adresse-n" class="col-form-label col-sm-1">Adresse N</label>
+                                                                            <div class="col-sm-2">
+                                                                                <input type="text" name="adresse-n" id="" class="form-control form-control-sm" placeholder="Texte">
+                                                                            </div>
+                                                                            <label for="rue" class="col-form-label col-sm-1">Rue</label>
+                                                                            <div class="col-sm-8">
+                                                                                <input type="text" name="" id="rue" class="form-control form-control-sm" placeholder="Texte">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="n-quartier" class="offset-1 col-sm-1 col-form-label">Quartier</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="n-quartier" placeholder="Texte">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="n-complement" class="offset-1 col-sm-1 col-form-label">Complement</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="n-complement" placeholder="Texte">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="n-ville" class="offset-1 col-sm-1 col-form-label">ville</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="n-ville" placeholder="Texte">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <div class="table-responsive pt-3 ml-4">
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th class="w-20">Nom</th>
+                                                                                            <th>Prenom</th>
+                                                                                            <th>Fonction</th>
+                                                                                            <th>Contact</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <textarea name="" id="" cols="30" rows="4" class="form-control form-control-sm"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="tab-pane container fade" id="annuaire">
+                                                                <form action="" method="post" class="forms-sample">
+                                                                    <div class="card p-5 mt-4">
+                                                                        <div class="form-group row">
+                                                                            <div class="form-check form-check-inline col-sm-3">
+                                                                                <label class="form-check-label">
+                                                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                    Circonscription
+                                                                                <i class="input-frame"></i></label>
+                                                                            </div>
+                                                                            <div class="form-check form-check-inline col-sm-3">
+                                                                                <label class="form-check-label">
+                                                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                    Departement
+                                                                                <i class="input-frame"></i></label>
+                                                                            </div>
+                                                                            <div class="form-check form-check-inline col-sm-3">
+                                                                                <label class="form-check-label">
+                                                                                    <input type="radio" class="form-check-input" name="optionsRadios5" id="optionsRadios5" value="option5">
+                                                                                    Central
+                                                                                <i class="input-frame"></i></label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <div class="table-responsive pt-3 ml-4">
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th class="w-20">Theme</th>
+                                                                                            <th>Action</th>
+                                                                                            <th>Instrument</th>
+                                                                                            <th>Partenaire</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <p class="card-description col-sm-12">Information sur le partenaire</p>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="adresse-n" class="col-form-label col-sm-1">Adresse N</label>
+                                                                            <div class="col-sm-2">
+                                                                                <input type="text" name="adresse-n" id="" class="form-control form-control-sm" placeholder="Texte">
+                                                                            </div>
+                                                                            <label for="rue" class="col-form-label col-sm-1">Rue</label>
+                                                                            <div class="col-sm-8">
+                                                                                <input type="text" name="" id="rue" class="form-control form-control-sm" placeholder="Texte">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="n-quartier" class="offset-1 col-sm-1 col-form-label">Quartier</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="n-quartier" placeholder="Texte">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="n-complement" class="offset-1 col-sm-1 col-form-label">Complement</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="n-complement" placeholder="Texte">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label for="n-ville" class="offset-1 col-sm-1 col-form-label">ville</label>
+                                                                            <div class="col-sm-10">
+                                                                                <input type="text" class="form-control" id="n-ville" placeholder="Texte">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <div class="table-responsive pt-3 ml-4">
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th class="w-20">Nom</th>
+                                                                                            <th>Prenom</th>
+                                                                                            <th>Fonction</th>
+                                                                                            <th>Contact</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                            <td></td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end modal -->
+                        </div>
+                        <!-- end TELEMA pill -->
+                    </div>
+
+                </div>
+                <!-- Consulter end -->
+            </div>
+            <!-- end of tabs -->
+        </div>
+    </div>
+
+    <!-- details modal -->
+    <div class="modal" id="detailFolder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <label for="selectFolder" class="col-sm-3 col-form-label">Fil de messages pour le dossier</label>
+                            <div class="col-sm-7">
+                                <select name="" id="selectFolder" class="form-control form-control-sm">
+    <option value="">dossier 1</option>
+    <option value="">dossier 2</option>
+</select>
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-light btn-sm shadow-sm">Afficher</button>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <p class="col-sm-12 font-italic">Identite : M/Mme prenom NOM, domicile xxxxxxxxxxxxxxxxxxxxxxxxx, contat 06 nn nnn nn nn</p>
+                            <p class="col-sm-12 font-italic">Dossier rattache a la CAS de xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx et suivi par nnnnnnnnnnnnnnnnnnnnnnn</p>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="table-responsive pt-3">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>De</th>
+                                            <th>A</th>
+                                            <th>Sujet</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>xx/xx/xxxx</td>
+                                            <td>Prenom Nom</td>
+                                            <td>Prenom Nom</td>
+                                            <td>Texte</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <hr style="border-bottom: 2px solid gray;">
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-sm-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-1 col-form-label">De</label>
+                                    <select name="" id="" class="col-sm-9 form-control form-control-sm">
+                                                <option value="">test 1</option>
+                                            </select>
+                                </div>
+                            </div>
+                            <!-- Col -->
+
+                            <div class="col-sm-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-1 col-form-label">A</label>
+                                    <select name="" id="" class="col-sm-11 form-control form-control-sm">
+                                                <option value="">test 1</option>
+                                            </select>
+                                </div>
+                            </div>
+                            <!-- Col -->
+                        </div>
+                        <div class="form-group row">
+                            <label for="exampleFormControlTextarea1">Texte du message</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Tapez le contenu du message..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="../assets/vendors/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../assets/vendors/bootstrap-maxlength/bootstrap-maxlength.min.js"></script>
+    <script src="../assets/vendors/inputmask/jquery.inputmask.min.js"></script>
+    <script src="../assets/vendors/select2/select2.min.js"></script>
+    <script src="../assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="../assets/vendors/jquery-tags-input/jquery.tagsinput.min.js"></script>
+    <script src="../assets/vendors/dropzone/dropzone.min.js"></script>
+    <script src="../assets/vendors/dropify/dist/dropify.min.js"></script>
+    <script src="../assets/vendors/bootstrap-colorpicker/bootstrap-colorpicker.min.js"></script>
+    <script src="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="../assets/vendors/moment/moment.min.js"></script>
+    <script src="../assets/vendors/tempusdominus-bootstrap-4/tempusdominus-bootstrap-4.js"></script>
+    <!-- end plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assets/vendors/feather-icons/feather.min.js"></script>
+    <script src="../assets/js/template.js"></script>
+    <!-- endinject -->
+
+    <!-- core:js -->
+    <script src="../assets/vendors/core/core.js "></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="../assets/vendors/chartjs/Chart.min.js "></script>
+    <script src="../assets/vendors/jquery.flot/jquery.flot.js "></script>
+    <script src="../assets/vendors/jquery.flot/jquery.flot.resize.js "></script>
+    <script src="../assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js "></script>
+    <script src="../assets/vendors/apexcharts/apexcharts.min.js "></script>
+    <script src="../assets/vendors/progressbar.js/progressbar.min.js "></script>
+    <!-- end plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../assets/vendors/feather-icons/feather.min.js "></script>
+    <script src="../assets/js/template.js "></script>
+    <!-- endinject -->
+    <!-- custom js for this page -->
+    <script src="../assets/js/dashboard.js "></script>
+    <script src="../assets/js/datepicker.js "></script>
+    <!-- end custom js for this page -->
+
+    <!-- custom js for this page -->
+    <script src="../assets/js/form-validation.js"></script>
+    <script src="../assets/js/bootstrap-maxlength.js"></script>
+    <script src="../assets/js/inputmask.js"></script>
+    <script src="../assets/js/select2.js"></script>
+    <script src="../assets/js/typeahead.js"></script>
+    <script src="../assets/js/tags-input.js"></script>
+    <script src="../assets/js/dropzone.js"></script>
+    <script src="../assets/js/dropify.js"></script>
+    <script src="../assets/js/bootstrap-colorpicker.js"></script>
+    <script src="../assets/js/datepicker.js"></script>
+    <script src="../assets/js/timepicker.js"></script>
+    <!-- end custom js for this page -->
+
+    <!-- link js for calendar -->
+    <script src="../assets/vendors/fullcalendar/fullcalendar.min.js"></script>
+    <script src="../assets/js/fullcalendar.js"></script>
+
+    <!-- // javascript -->
+    <script>
+        var scrollbarExample = new PerfectScrollbar('.perfect-scrollbar-example');
+    </script>
+</body>
+
+</html>
